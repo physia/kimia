@@ -1,0 +1,66 @@
+.bdg,
+.bdg-f {
+    color: #fff;
+    height: 24px;
+    background-color: rgb(149, 117, 205);
+    background-color: var(--clr-s, rgb(149, 117, 205));
+    pointer-events: none;
+    padding: 0 2px;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.bdg .material-icons,
+.bdg .-i,
+.bdg-f .material-icons,
+.bdg-f .-i {
+    font-size: 20px
+}
+
+.bdg {
+    border-radius: 2px;
+    margin: 0 8px;
+    padding: 0 8px;
+}
+
+.bdg-s {
+    border-radius: 2px;
+    margin: 0 8px;
+    padding: 0 8px;
+}
+
+.bdg-f {
+    position: absolute;
+    pointer-events: none;
+    min-width: 24px;
+    border-radius: 100px;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+[rtl] .bdg-f,
+.bdg-l {
+    right: auto;
+    left: 0;
+    transform: translate(-20%, -20%);
+}
+
+[ltr] .bdg-f,
+.bdg-r {
+    right: 0;
+    left: auto;
+    transform: translate(20%, -20%)
+}
+
+.bdg-i {
+    top: 8px !important;
+}
+
+.bdg-s {
+    font-size: 11px;
+    opacity: 0.9;
+    min-width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,93 @@
+@mixin _cl-color_palette($clr, $name, $value) {
+    $colors: Cl-getColor($name);
+    @each $__clr,
+    $hex in $colors {
+        @if $__clr=="3" and $clr=="s" {
+            :root {
+                --clr-s: #{$hex};
+            }
+            .c-s,.h\:c-s:hover,.f\:c-s:focus {
+                background-color: var(--clr-s) !important
+            }
+            .c-s-t,.h\:c-s-t:hover,.f\:c-s-t:focus {
+                color: var(--clr-s) !important
+            }
+            .c-s-b,.h\:c-s-b:hover,.f\:c-s-b:focus {
+                border-color: var(--clr-s) !important
+            }
+        }
+        @if $__clr=="5" and $clr=="p" {
+            :root {
+                --clr-p: #{$hex};
+                caret-color: #{$hex};
+            }
+            ::selection,::-moz-selection {
+                color: white;
+                background-color: var(--clr-s)
+            }
+            .c-p,.h\:c-p:hover,.f\:c-p:focus {
+                @include _cl-background_color(var(--clr-p,$hex));
+            }
+            .c-p-t,.h\:c-p-t:hover,.f\:c-p-t:focus {
+                @include _cl-text_color(var(--clr-p,$hex));
+            }
+            .c-p-b,.h\:c-p-b:hover,.f\:c-p-b:focus {
+                @include _cl-border_color(var(--clr-p,$hex));
+            }
+        }
+        @include _cl-init_color($__clr, $hex, "c-"+$clr)
+    }
+}
+
+@mixin _cl-colors() {
+    @each $_clr,
+    $clrs in $cl--colors-palette {
+
+        @each $__clr,
+        $hex in $clrs {
+            @if $__clr=="5" {
+                .c-#{$_clr},.h\:c-#{$_clr}:hover,.f\:c-#{$_clr}:focus {
+                    @include _cl-background_color($hex);
+                }
+                .c-#{$_clr}-t,.h\:c-#{$_clr}-t:hover,.f\:c-#{$_clr}-t:focus {
+                    @include _cl-text_color($hex);
+                }
+                .c-#{$_clr}-b,.h\:c-#{$_clr}-b:hover,.f\:c-#{$_clr}-b:focus {
+                    @include _cl-border_color($hex);
+                }
+            }
+            
+        }        
+    }
+}
+@mixin _cl-init_color($name, $color, $prefix:"c") {
+    @include _cl-init_color_full(#{$prefix}-#{$name}, $color);
+}
+
+@mixin _cl-init_color_full($name, $color) {
+    .#{$name},.h\:#{$name}:hover,.f\:#{$name}:focus {
+        @include _cl-background_color($color);
+    }
+    .#{$name}-t,.h\:#{$name}-t:hover,.f\:#{$name}-t:focus {
+        @include _cl-text_color($color);
+    }
+    .#{$name}-b,.h\:#{$name}-b:hover,.f\:#{$name}-b:focus {
+        @include _cl-border_color($color);
+    }
+}
+@mixin _cl-background_color($color) {
+    background-color: $color !important
+}
+
+@mixin _cl-text_color($color) {
+    color: $color !important
+}
+@mixin _cl-border_color($color) {
+    border-color: $color !important
+}
+
+@mixin _cl-fill_color($color) {
+    fill: $color !important
+}
+
+

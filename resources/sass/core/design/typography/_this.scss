@@ -1,0 +1,191 @@
+h1 {
+    font-size: 6rem;
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+h4 {
+    font-size: 2.125rem;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 30px;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.15px;
+    line-height: 25px;
+}
+// 
+// title 1
+.t\#1 {
+    font-size: calc(0.1vw + 1.25rem);
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+}
+
+// title 2
+.t\#2 {
+    font-size: calc(0.1vw + 1rem);
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    line-height: 24px;
+}
+
+// Sub title 1
+.s\#1 {
+    font-size: calc(0.1vw + 0.81rem);
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+}
+
+// Sub title 2
+.s\#2 {
+    font-size: calc(0.1vw + 0.675rem);
+    font-weight: 500;
+    letter-spacing: -0.1px;
+    line-height: 24px;
+}
+
+// Caption
+.c\# {
+    font-size: calc(0.1vw + 0.6rem);
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+// Overline
+.o\# {
+    font-size: calc(0.1vw + 0.5rem);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+// Body 1
+.b\#1 {
+    font-size: calc(0.1vw + 0.8rem);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.55;
+}
+
+// Body 2
+.b\#2 {
+    font-size: calc(0.1vw + 0.8rem);
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 1.4;
+}
+
+// Action Button nano
+.a\#1 {
+    font-size: calc(0.1vw + 0.65rem);
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+
+// Action Button small 
+.a\#2 {
+    font-size: calc(0.1vw + 0.8rem);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+// Action Button medium
+.a\#,
+.a\#3,
+.btn,
+.btn-n,
+.btn-t {
+    font-size: calc(0.1vw + 0.8rem);
+    font-weight: 500;
+    letter-spacing: 0.75px;
+}
+
+// Action Button large
+.a\#4 {
+    font-size: calc(0.1vw + 0.8rem);
+    font-weight: 400;
+    font-weight: calc(0.1vw + 0.8rem);
+    letter-spacing: 0.5px;
+}
+
+// Action Button xlarge
+.a\#5 {
+    font-size: calc(0.1vw + 1.3rem);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+// font weight
+@for $value from 1 through 9 {
+    .w\##{$value} {
+        font-weight: #{$value*100};
+    }
+}
+
+// Action Button xlarge
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: unset;
+    margin-bottom: 0.86rem;
+    line-height: 1.5;
+}
+
+// case
+
+.CASE {
+    text-transform: uppercase;
+}
+
+.case {
+    text-transform: lowercase;
+}
+
+.Case {
+    text-transform: capitalize;
+}
+
+// ellipsis
+.\.\.\.n,
+.\.\.\.,
+.\.\.\.c {
+    white-space: nowrap;
+}
+
+.\.\.\.,
+.\.\.\.c {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.\.\.\.c {
+    text-overflow: clip !important
+}

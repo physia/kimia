@@ -1,0 +1,67 @@
+//  direction
+[rtl] {
+    --dir: rtl;
+    --dir-start: right;
+    --dir-end: left;
+    --is-rtl: 1;
+    --is-ltr: 0;
+    direction: var(--dir, rtl);
+}
+
+[ltr] {
+    --dir: ltr;
+    --dir-start: left;
+    --dir-end: right;
+    --is-ltr: 1;
+    --is-rtl: 0;
+    direction: var(--dir,ltr);
+}
+// theme
+[dark] {
+    background-color: #000;
+    color: rgb(245, 245, 245);
+    --is-dark: 1;
+    --is-light: 0;
+    --theme-text-color:rgb(255, 255, 255);
+    --theme-card-bg:rgb(30, 30, 30);
+    --theme-status-h-opacity:.7;
+    --theme-status-m-opacity:.5;
+}
+
+[light] {
+    background-color: #fff;
+    color: rgb(10, 10, 10);
+    --is-dark: 0;
+    --is-light: 1;
+    --theme-text-color:rgb(10, 10, 10);
+    --theme-card-bg:rgb(255, 255, 255);
+    --theme-status-h-opacity:.87;
+    --theme-status-m-opacity:.6;
+}
+[md2] {
+    --is-md2: 1;
+    --is-ios: 0;
+    // material design 2
+}
+
+[ios] {
+    --is-ios: 1;
+    --is-md2: 0;
+    // iOS design style
+}
+
+// *
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+    outline: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}

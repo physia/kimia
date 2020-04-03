@@ -1,0 +1,19 @@
+.-bla {
+    position: relative;
+    background-color: var(--theme-colors-16);
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.-bla::before {
+    @extend .anm,.abs,.\.f;
+    content: " ";
+  background-image: linear-gradient(90deg, transparent, var(--theme-colors-17), transparent);
+    animation-name: anm-sld;
+    --anm--sld-opacity-from: 1;
+    --anm--sld-opacity-to: 1;
+    --anm--sld-translate-from: -100%, 0;
+    --anm--sld-translate-to: 100%, 0;
+    --anm-duration: 1.25s;
+    --anm-count: infinite;
+}

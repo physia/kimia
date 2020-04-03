@@ -1,0 +1,263 @@
+.prg {
+    $this: &;
+    height: 4px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        opacity: 0.3;
+    }
+
+    & .prg-cnt,
+    &::before,
+    & .prg-inf::before,
+    & .prg-inf::after {
+        content: " ";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: inherit;
+        background-color: rgb(149, 117, 205);
+        background-color: var(--clr-s, rgb(149, 117, 205));
+
+    }
+
+    & .prg-inf {
+
+        &::before,
+        &::after {
+            border-radius: inherit;
+            position: absolute;
+            will-change: right, left;
+            animation: an-empty 2s infinite linear;
+        }
+    }
+}
+
+// rtl
+[rtl] {
+    .prg {
+        & .prg-inf {
+            &::before {
+                animation-name: an-prg-inf-b-rtl;
+            }
+
+            &::after {
+                animation-name: an-prg-inf-a-rtl;
+            }
+        }
+    }
+}
+
+// ltr
+[ltr] {
+    .prg {
+        & .prg-inf {
+            &::before {
+                animation-name: an-prg-inf-b-ltr;
+            }
+
+            &::after {
+                animation-name: an-prg-inf-a-ltr;
+            }
+        }
+    }
+}
+
+
+.prgc {
+    height: 36px;
+    width: 36px;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+    will-change: transform;
+    overflow: visible;
+
+    circle {
+        stroke-dashoffset: calc(calc(100 + calc(var(--prg-p) * calc(var(--is-rtl) * 2 - 1))) * 114px / 100);
+        stroke-dasharray: 114;
+        stroke-width: 3px;
+        fill: none;
+        stroke: rgb(149, 117, 205);
+        stroke: var(--clr-s, rgb(149, 117, 205));
+        will-change: stroke-dashoffset, transform;
+        transition-property: stroke-dashoffset;
+        transition-duration: 300ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center center
+    }
+}
+
+.prgc.prg-inf {
+    animation: an-prgc 2000ms linear infinite both;
+}
+
+[rtl] .prgc.prg-inf circle {
+    animation: an-prg-crcl-rtl 1200ms infinite both;
+}
+
+[ltr] .prgc.prg-inf circle {
+    animation: an-prg-crcl-ltr 1200ms infinite both;
+}
+
+@keyframes an-prgc {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(calc(-360deg * calc(var(--is-rtl) * 2 - 1)));
+    }
+}
+
+// rtl
+@keyframes an-prg-crcl-rtl {
+    0% {
+        stroke-dashoffset: -20;
+        transform: rotate(-30deg)
+    }
+
+    50% {
+        stroke-dashoffset: -110;
+        transform: rotate(-360deg)
+    }
+
+    to {
+        stroke-dashoffset: -20;
+        transform: rotate(-390deg)
+    }
+}
+
+@keyframes an-prg-inf-a-rtl {
+    0% {
+        left: 100%;
+        right: -25%
+    }
+
+    25% {
+        left: 0%;
+        right: 25%
+    }
+
+    75% {
+        left: 0%;
+        right: 150%
+    }
+
+    to {
+        left: 0%;
+        right: 150%
+    }
+}
+
+@keyframes an-prg-inf-b-rtl {
+    0% {
+        left: 100%;
+        right: -50%
+    }
+
+    40% {
+        animation-timing-function: cubic-bezier(0.4, 0.6, 0.6, 0.9);
+        left: 100%;
+        right: -100%
+    }
+
+    75% {
+        left: -10%;
+        right: 100%
+    }
+
+    to {
+        left: -50%;
+        right: 125%
+    }
+}
+
+// ltr
+@keyframes an-prgc-ltr {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes an-prg-crcl-ltr {
+    0% {
+        stroke-dashoffset: 20;
+        transform: rotate(30deg)
+    }
+
+    50% {
+        stroke-dashoffset: 110;
+        transform: rotate(360deg)
+    }
+
+    to {
+        stroke-dashoffset: 20;
+        transform: rotate(390deg)
+    }
+}
+
+@keyframes an-prg-inf-a-ltr {
+    0% {
+        right: 100%;
+        left: -25%
+    }
+
+    25% {
+        right: 0%;
+        left: 25%
+    }
+
+    75% {
+        right: 0%;
+        left: 150%
+    }
+
+    to {
+        right: 0%;
+        left: 150%
+    }
+}
+
+@keyframes an-prg-inf-b-ltr {
+    0% {
+        right: 100%;
+        left: -50%
+    }
+
+    40% {
+        animation-timing-function: cubic-bezier(0.4, 0.6, 0.6, 0.9);
+        right: 100%;
+        left: -100%
+    }
+
+    75% {
+        right: -10%;
+        left: 100%
+    }
+
+    to {
+        right: -50%;
+        left: 125%
+    }
+}
+
+// MD2
+
+[md2] {
+
+    // material design 2
+    .prg {
+
+        .prg-cnt,
+        .prg-inf {
+            border-radius: 100%;
+        }
+    }
+}

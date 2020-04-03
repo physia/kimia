@@ -1,0 +1,54 @@
+//
+[tt] {
+    position: relative !important;
+}
+
+[tt]::before {
+    content: attr(tt);
+    transition: all 0.2s ease;
+    position: absolute;
+    display: block;
+    z-index: 1001;
+    background: rgba(96, 96, 96, 0.8);
+    min-height: 35px;
+    border-radius: 2px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 13px;
+    line-height: 22px;
+    padding: 6px 8px;
+    transform: scale(0.5) translateX(50%);
+    transform-origin: right;
+    color: #fff;
+    width: auto;
+    white-space: nowrap;
+    transition-delay: 0.4s;
+    right: 50%;
+
+}
+
+[tt]:hover::before {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1) translateX(50%);
+    transition-delay: 0.2s
+}
+
+.tt--t::before {
+    bottom: 80%;
+}
+
+.tt--t:hover::before {
+    right: 50%;
+    bottom: calc(100% + 10px);
+}
+
+.tt--b::before {
+    top: 80%;
+}
+
+.tt--b:hover::before {
+    right: 50%;
+    top: calc(100% + 10px);
+}

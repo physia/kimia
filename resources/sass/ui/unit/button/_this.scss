@@ -1,0 +1,65 @@
+@import "../../../core/design/elevation/variables";
+@import "../../../core/design/elevation/mixins";
+
+button {
+    border: none
+}
+.btn,
+.fll {
+    color: #fff;
+    height: 36px;
+    background-color: rgb(149, 117, 205);
+    background-color: var(--clr-s, rgb(149, 117, 205));
+}
+.btn,
+.btn-n,
+.btn-f,
+.fll,.btn-t {
+    user-select: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btn:not([class*="u-"]),
+.btn-n:not([class*="u-"]) {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.btn-f.e {
+    @extend .e-6;
+    //@include _el-mix(6);
+}
+
+.btn-f.e:hover {
+    @extend .e-8;
+   // @include _el-mix(8);
+}
+
+.btn-f.e:active {
+    @extend .e-16;
+    //@include _el-mix(16);
+}
+
+.btn-n {
+    height: 36px;
+    color: rgb(149, 117, 205);
+    color: var(--clr-s, rgb(149, 117, 205));
+    background-color: transparent !important;
+}
+
+.btn.h-1,
+.btn-n.h-1 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.flt {
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    pointer-events: none;
+    position: fixed;
+    z-index: 1001;
+}
+
+.flt>* {
+    pointer-events: initial;
+}

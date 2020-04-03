@@ -1,0 +1,84 @@
+.unt,
+.unt-n {
+    user-select: none;
+    position: relative;
+    transition: 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+}
+
+.unt:not(.s-s) {
+    cursor: pointer;
+}
+
+.unt.u-r i,
+.unt.u-r,
+.unt-n.u-r i,
+.unt-n.u-r {
+    font-size: calc(.2vw + 18px);
+}
+
+.unt:not(.s-d)::before {
+    content: " ";
+    background-color: currentColor;
+    border-radius: inherit;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: inherit;
+    will-change: background-color, border, opacity;
+    opacity: 0;
+    z-index: 1;
+}
+
+.unt.-o-h::after {
+    opacity: 0;
+}
+
+.unt.-o-h:hover::after {
+    opacity: 1;
+}
+
+.unt.-o-1,
+.unt.-o-2 {
+    background-color: transparent;
+    color: rgb(149, 117, 205);
+    color: var(--clr-s, rgb(149, 117, 205));
+}
+
+.unt:not(.s-s):hover::before {
+    opacity: .08;
+    transition: 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@media (min-width: 840px) {
+    .unt:not(.s-s):active::before {
+        opacity: .14;
+        transition: 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        filter: brightness(90%);
+    }
+}
+
+.unt.s-d.-o-1,
+.unt.s-d.-o-2 {
+    border-color: rgba(0, 0, 0, 0.36) !important;
+    background-color: transparent !important;
+}
+
+.unt[class*="u-"] {
+    border-radius: 100px;
+    justify-content: center;
+}
+
+.unt.u-1 i {
+    font-size: 16px
+}
+
+.unt-i {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

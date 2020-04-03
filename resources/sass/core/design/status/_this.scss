@@ -1,0 +1,43 @@
+// High-emphasis & Active icon
+.s-h {
+    opacity: var(--theme-status-h-opacity, .87);
+}
+
+// Medium-emphasis & Inactive icon & helper text
+.s-m {
+    opacity: var(--theme-status-h-opacity, .6);
+}
+
+
+// Disabled
+.s-d {
+    pointer-events: none !important;
+    box-shadow: none;
+    filter: grayscale(100);
+    opacity: 0.3;
+}
+
+.s-s {
+    opacity: .96;
+    pointer-events: all;
+}
+
+
+@for $var from 0 to 10 {
+
+    .o-#{$var} {
+        opacity: $var/10;
+    }
+
+    .h\:o-#{$var}:hover {
+        opacity: $var/10;
+    }
+
+    .a\:o-#{$var}:active {
+        opacity: $var/10;
+    }
+
+    .f\:o-#{$var}:focus {
+        opacity: $var/10;
+    }
+}

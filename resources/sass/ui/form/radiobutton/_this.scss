@@ -1,0 +1,81 @@
+// Elevation
+@import "../../../core/design/elevation/variables";
+@import "../../../core/design/elevation/mixins";
+
+.rdo {
+    position: relative;
+    display: inline-flex;
+    z-index: 1;
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    & input:checked+.rdo-hnd {
+        .hnd {
+            transform: scale(1);
+        }
+    }
+
+    & input:checked+.rdo-hnd {
+        border-color: rgb(149, 117, 205);
+        border-color: var(--clr-s, rgb(149, 117, 205));
+    }
+
+    & .rdo-hnd .hnd,
+    & input:checked+.rdo-hnd::before {
+        background-color: rgb(149, 117, 205);
+        background-color: var(--clr-s, rgb(149, 117, 205));
+    }
+
+    & input:focus+.rdo-hnd::before,
+    & input:active+.rdo-hnd::before {
+        transform: scale(2.4)
+    }
+
+}
+
+.rdo-hnd {
+    cursor: pointer;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+    border: 2px solid rgba(117, 117, 117, 0.6);
+
+    &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        transition-duration: 200ms;
+        transition-property: transform, background-color;
+        background-color: rgb(130, 130, 130);
+        z-index: -1;
+        opacity: 0.46;
+        transform: scale(0);
+        border-radius: 100px;
+    }
+
+    & .hnd {
+        position: absolute;
+        z-index: 2;
+        transition-duration: 200ms;
+        transition-property: transform, background-color;
+        top: 2px;
+        bottom: 2px;
+        right: 2px;
+        left: 2px;
+        border-radius: inherit;
+        transform: scale(0);
+    }
+}

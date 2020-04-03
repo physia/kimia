@@ -1,0 +1,153 @@
+:root {
+    --anm-name: anm-fd;
+    --anm-duration: .46s;
+    --anm-mode: both;
+    --anm-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --anm-count: 1; // infinite,
+    --anm-delay: 0;
+    --anm-direction: normal;
+
+    // scale
+    --anm--scl-opacity-from: 0;
+    --anm--scl-opacity-to: 1;
+    --anm--scl-scale-from: 0;
+    --anm--scl-scale-to: 1;
+
+    // slide
+    --anm--sld-opacity-from: 0;
+    --anm--sld-opacity-to: 1;
+    --anm--sld-translate-from: 0, 10%;
+    --anm--sld-translate-to: 0, 0;
+}
+
+@keyframes anm-init {
+    0% {}
+
+    to {}
+}
+
+// animation infinite
+.anm {
+    animation: var(--anm-name) var(--anm-duration) var(--anm-function) var(--anm-delay) var(--anm-count) var(--anm-direction) var(--anm-mode);
+    animation-duration: var(--anm-duration);
+    animation-fill-mode: var(--anm-mode);
+    animation-timing-function: var(--anm-function);
+    animation-iteration-count: var(--anm-count);
+    animation-direction: var(--anm-direction);
+
+}
+
+.fd-in {
+    animation-name: anm-fd
+}
+
+.fd-out {
+    animation-name: anm-fd;
+    animation-direction: reverse;
+}
+
+@keyframes anm-fd {
+    0% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.shw-in {
+    animation-name: anm-shw
+}
+.shw-out {
+    animation-name: anm-shw;
+    animation-direction: reverse;
+}
+
+
+@keyframes anm-shw {
+    0% {
+        transform: scale(0) rotate(90deg)
+    }
+
+    to {
+        transform: scale(1) rotate(0deg)
+    }
+}
+
+// scale
+.scl-in {
+    animation-name: anm-scl
+}
+.scl-out {
+    animation-name: anm-scl;
+    animation-direction: reverse;
+}
+
+@keyframes anm-scl {
+    0% {
+        opacity: var(--anm--scl-opacity-from,0);
+        transform: scale(var(--anm--scl-scale-from,0))
+    }
+
+    to {
+        opacity: var(--anm--scl-opacity-to,1);
+        transform: scale(var(--anm--scl-scale-to,1))
+    }
+}
+
+// slide
+.sld-in {
+    animation-name: anm-sld
+}
+.sld-out {
+    animation-name: anm-sld;
+    animation-direction: reverse;
+}
+
+@keyframes anm-sld {
+    0% {
+        opacity: var(--anm--sld-opacity-from);
+        transform: translate(var(--anm--sld-translate-from))
+    }
+
+    80% {
+        opacity: var(--anm--sld-opacity-to);
+    }
+
+    to {
+        opacity: var(--anm--sld-opacity-to);
+        transform: translate(var(--anm--sld-translate-to))
+    }
+}
+
+// clip
+
+.clp-in {
+    animation-name: anm-clp
+}
+.clp-out {
+    animation-name: anm-clp;
+    animation-direction: reverse;
+}
+
+
+@keyframes anm-clp {
+    0% {
+        clip-path: circle(0% at center center);
+    }
+
+    to {
+        clip-path: circle(100% at center center);
+    }
+}
+
+// pulse animation
+.pls {
+    animation-name: anm-sld;
+    --anm-scl-opacity-from: 1;
+    --anm-scl-opacity-to: 0;
+    --anm-scl-scale-from: 0.9;
+    --anm-scl-scale-to: 1.3;
+    --anm-count: infinite;
+}

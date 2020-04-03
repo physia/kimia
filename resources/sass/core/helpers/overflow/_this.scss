@@ -1,0 +1,60 @@
+// overflow
+.-o-a,
+.h\:o-a:hover {
+    overflow: auto !important
+}
+
+// overflow
+.-o-n {
+    overflow: initial
+}
+
+.-o-x-h,
+.-o-h {
+    overflow-x: hidden;
+}
+
+.-o-x-v,
+.-o-v {
+    overflow-x: visible;
+}
+
+.-o-x-a,
+.h\:o-x-a:hover {
+    overflow-x: auto;
+}
+
+.-o-x-n {
+    overflow-x: initial
+}
+
+.-o-y-h,
+.-o-h {
+    overflow-y: hidden;
+}
+
+.-o-y-v,
+.h\:-o-y-v:hover,
+.-o-v {
+    overflow-y: visible;
+}
+
+.h\:-o-y-a:hover,
+.-o-y-a {
+    overflow-y: auto;
+}
+
+.-o-y-n {
+    overflow-y: initial
+}
+
+.-o-x-s {
+    overflow-x: scroll
+}
+.-o-y-s {
+    overflow-y: scroll
+}
+
+.-o-s {
+    overflow: scroll
+}

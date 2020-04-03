@@ -1,0 +1,24 @@
+.lyr {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.lyr.lyr-0 {
+    position: relative;
+}
+
+.lyr.lyr-1 {
+    z-index: 1001;
+}
+
+.lyr.lyr-2 {
+    z-index: 2001;
+}
+
+.lyr.lyr-3 {
+    z-index: 3001;
+}

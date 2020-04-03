@@ -1,0 +1,9 @@
+@import "variables";
+@function Cl-getColor($color-name) {
+    @if map-has-key($cl--colors-palette, $color-name) {
+        @return map-get($cl--colors-palette, $color-name);
+    }
+    @else {
+        @warn "The color `#{$color-name}` are Not find!!!. IDN Wy! Plz DIY.";
+    }
+}

@@ -1,0 +1,86 @@
+        .sld {
+            position: relative;
+        }
+
+        [class*="sld-pl"] {
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .sld:not(.sld--scrlng) .sld-pl-r,
+        .sld:not(.sld--scrlng) .sld-pl-l {
+            width: 0 !important;
+            transition: width, height .5s ease;
+            margin: 0 !important;
+        }
+
+        .sld-pl-r,
+        .sld-pl-l {
+            top: 0;
+            bottom: 0;
+            width: calc(calc(var(--sld-pl-l) * 1px * -1) / 4);
+        }
+
+        .sld-pl-t,
+        .sld-pl-b {
+            left: 0;
+            right: 0;
+            height: calc(calc(var(--sld-pl-l) * 1px * -1) / 4);
+        }
+
+        .sld-pl-t {
+            top: 0;
+        }
+
+        .sld-pl-b {
+            bottom: 0;
+        }
+
+        .sld-pl-r {
+            right: 0;
+            margin-left: calc(calc(calc(var(--sld-pl-l) * 1px * -1) / 4) * -1);
+        }
+
+        .sld-pl-l {
+            left: 0;
+            margin-right: calc(calc(calc(var(--sld-pl-r) * 1px * -1) / 4) * -1);
+        }
+
+        .sld-pl-r::before,
+        .sld-pl-l::before {
+            content: " ";
+            position: absolute;
+            background: rgba(0, 151, 135, 0.39);
+            border-radius: 100%;
+        }
+
+        .sld-pl-r::before {
+            width: 100%;
+            bottom: -21%;
+            top: -21%;
+            right: -60%;
+        }
+
+        .sld-pl-l::before {
+            width: 100%;
+            bottom: -21%;
+            top: -21%;
+            left: -60%;
+        }
+
+        .sld-pl-t::before {
+            height: 100%;
+            right: -21%;
+            left: -21%;
+            top: -60%;
+        }
+
+        .sld-pl-b::before {
+            height: 100%;
+            right: -21%;
+            left: -21%;
+            bottom: -60%;
+        }

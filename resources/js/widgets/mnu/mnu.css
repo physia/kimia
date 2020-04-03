@@ -1,0 +1,19 @@
+.mnus {
+    position: relative;
+    overflow: hidden;
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.mnu-sb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: #ffffff;
+    z-index: 100;
+    transition: transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.mnu-sb[mnu="open"] {
+    transform: translateX(0%);
+}

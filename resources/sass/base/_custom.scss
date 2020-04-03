@@ -1,0 +1,31 @@
+// Document
+html {
+    min-height: 100%;
+}
+
+// Pre
+pre {
+    white-space: pre-wrap;
+}
+
+// Table
+table {
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 30px;
+}
+
+td,
+th {
+    text-align: inherit;
+    padding: 5px;
+}
+
+tr {
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+a {
+    text-decoration:none
+}

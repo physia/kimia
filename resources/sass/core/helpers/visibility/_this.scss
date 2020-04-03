@@ -1,0 +1,20 @@
+// visibility
+.-v-v {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+.-v-h {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.-v-i {
+    visibility: inherit !important;
+}
+
+.-v-n {
+    display: none !important;
+}

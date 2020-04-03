@@ -1,0 +1,134 @@
+
+
+// resize
+.-sz-n {
+    resize: none
+}
+
+.-sz {
+    resize: both
+}
+.-sz-y {
+    resize: vertical
+}
+
+
+.-sz-x {
+    resize: horizontal
+}
+
+// z-index
+.-z-bg {
+    z-index: -1;
+}
+
+.-z-n {
+    z-index: 0;
+}
+
+.-z {
+    z-index: 1;
+}
+
+.-z-1 {
+    z-index: 10;
+}
+
+.-z-2 {
+    z-index: 100;
+}
+
+.-z-3 {
+    z-index: 1001;
+}
+
+.-z-t {
+    z-index: 10000;
+}
+
+// cursor
+.-c-n {
+    cursor: not-allowed;
+}
+.-c-d {
+    cursor: default;
+}
+
+.-c-w {
+    cursor: wait;
+}
+
+.-c-m {
+    cursor: move;
+}
+
+.-c,
+.-c-p {
+    cursor: pointer;
+}
+
+//  user select
+.-s-n {
+    user-select: none;
+}
+
+.-s-a,
+.-s-a * {
+    user-select: none;
+}
+
+.-s,
+.-s-a {
+    user-select: auto;
+}
+
+
+
+// Pointer events
+.-pe-i {
+    pointer-events: inherit !important
+}
+
+.-pe-n {
+    pointer-events: none !important
+}
+
+.-pe {
+    pointer-events: all !important
+}
+
+// Room
+.-rm {
+    pointer-events: none !important
+}
+
+.-rm>* {
+    pointer-events: initial
+}
+
+//
+.nll {
+    border: none;
+    background: none;
+}
+
+//
+.ovrly {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: opacity 0.35s ease;
+}
+
+.ovrly:not([ovrly="open"]):not([ovrly="close"]) {
+    display: none;
+}
+
+// appearance
+.-aprnc {
+    appearance: none;
+}

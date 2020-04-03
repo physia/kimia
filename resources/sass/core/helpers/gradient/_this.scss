@@ -1,0 +1,16 @@
+// Gradient
+.-grdnt-t {
+    background-image: linear-gradient(90deg, var(--grdnt-start, transparent), var(--grdnt-end, rgba(0, 0, 0, 0.6)));
+}
+
+.-grdnt-b {
+    background-image: linear-gradient(var(--grdnt-start, transparent), var(--grdnt-end, rgba(0, 0, 0, 0.6)));
+}
+
+.-grdnt-l {
+    background-image: linear-gradient(45deg, var(--grdnt-start, transparent), var(--grdnt-end, rgba(0, 0, 0, 0.6)));
+}
+
+.-grdnt-r {
+    background-image: linear-gradient(-45deg, var(--grdnt-start, transparent), var(--grdnt-end, rgba(0, 0, 0, 0.6)));
+}

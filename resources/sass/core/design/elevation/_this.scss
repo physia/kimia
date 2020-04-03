@@ -1,0 +1,29 @@
+@import "variables";
+@import "mixins";
+
+@for $value from 0 through 24 {
+
+    .e-#{$value},
+    .h\:e-#{$value}:hover,
+    .f\:e-#{$value}:focus,
+    .a\:e-#{$value}:active {
+        @include _el-mix($value);
+    }
+}
+
+//
+.e {
+    @include _el-mix(1);
+}
+
+.e:hover {
+    @include _el-mix(3);
+}
+
+.e:active {
+    @include _el-mix(6);
+}
+
+.e:focus {
+    @include _el-mix(8);
+}

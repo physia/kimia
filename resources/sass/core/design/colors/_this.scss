@@ -1,0 +1,81 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+
+/*
+ * Physia css color system
+ * {c|d|l}-{*}-{*}: background color لون الخلفية
+ * {c|d|l}-{*}-t  : text color لون النص
+ * {c|d|l}-{*}-b  : border color لون الحدود
+ * Ex: <input class="c-p c-0-t l-0 d-15"/>
+ */
+/*
+ * تدرج ألوان من الأبيض إلى الأسود، الهدف منها تخصيصي الوضع المضلم والوضع العادي
+ * يمكن استعماله أيضا لتحديد تدرج معين
+ * dark and light theme helpers
+ * you can use " to select color black to white
+ */
+@for $dc from 0 to 21 {
+    $color: hsl(0, 0, $dc*5);
+    $_color: 100-($dc*5);
+    
+    $colord: hsl(0, 0, $_color);
+    [light] {
+        --theme-colors-#{$dc}: #{$color};
+    }
+
+    [dark] { 
+        --theme-colors-#{$dc}: #{$colord};
+    }
+
+    @include _cl-init_color_full(c#{$dc}, var(--theme-colors-#{$dc}));
+    .c-#{$dc},
+    [dark] .d#{$dc},
+    [light] .l#{$dc} {
+        background-color: hsl(0, 0, $dc*5) !important
+    }
+
+    .c-#{$dc}-t,
+    [dark] .d#{$dc}-t,
+    [light] .l#{$dc}-t {
+        color: hsl(0, 0, $dc*5) !important
+    }
+
+    .c-#{$dc}-b,
+    [dark] .d#{$dc}-b,
+    [light] .l#{$dc}-b {
+        border-color: hsl(0, 0, $dc*5) !important
+    }
+
+
+}
+@include _cl-color_palette("p", $--cl--ThePrimaryColor, "5");
+@include _cl-color_palette("s", $--cl--TheSecondaryColor, "3");
+
+@include _cl-colors();
+
+@each $name,
+$color in $cl--colors {
+    @include _cl-init_color_full(c-#{$name}, $color);
+}
+
+// ألوان تحديد الأوضاع، خطأ، تحذير، تنبيه...إلخ
+// static colors wrong, error,...
+@each $name,
+$color in $cl--static-colors {
+    .c-#{$name} {
+        @include _cl-background_color($color);
+    }
+
+    .c-#{$name}-t {
+        @include _cl-text_color($color);
+    }
+
+    .c-#{$name}-b {
+        @include _cl-border_color($color);
+    }
+
+    .c-#{$name}-f {
+        @include _cl-fill_color($color);
+    }
+}

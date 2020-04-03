@@ -1,0 +1,14 @@
+// media
+$media-sizes: ("s\\:": 479px, "m\\:": 480px, "l\\:": 840px, "xl\\:": 1201px);
+
+@mixin media($_size) {
+    @if $_size=="" {
+        @content
+    }
+
+    @else {
+        @media only screen and (min-width: map-get($media-sizes, $_size)) {
+            @content
+        }
+    }
+}

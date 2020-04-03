@@ -1,0 +1,31 @@
+// color
+@import "../../../core/design/colors/variables";
+// Elevation
+@import "../../../core/design/elevation/variables";
+@import "../../../core/design/elevation/mixins";
+
+.crd {
+    @extend .e-1;
+    background-color: var(--theme-card-bg);
+    border-radius: var(--theme-card-radius, 4px);
+}
+// line "divider"
+.ln,
+.ln-x{
+    display: block;
+    height: 1px;
+    width: 100%;
+}
+
+.ln-y,
+.crd-h .ln {
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+}
+
+.ln,
+.ln-x,
+.ln-y {
+    background: rgba(128, 128, 128, 0.15);
+}

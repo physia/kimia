@@ -1,0 +1,58 @@
+$columns: 12+1;
+
+@mixin grid-column($size) {
+    width:  calc(100% * #{$size} / 12) !important;
+}
+
+@mixin grid-builder($size_name) {
+    @for $i from 1 to $columns {
+        & .#{$size_name}\@#{$i} {
+            @include grid-column($i);
+        }
+    }
+
+    .g\@ {
+        padding: var(--s-margin-$size_name);
+        grid-gap: var(--s-gutter-$size_name);
+    }
+}
+
+@mixin _load_grid_media {
+
+    @include grid-builder(s);
+
+    @media (max-width: 479px) {
+        :root {
+            --c-size: 100%
+        }
+    }
+
+    @media (min-width: 480px) {
+        @include grid-builder(m);
+        :root {
+            --c-size: 90%
+        }
+    }
+
+    @media (min-width: 840px) {
+        @include grid-builder(l);
+        :root {
+            --c-size: 85%;
+        }
+    }
+
+    @media (min-width: 1201px) {
+        @include grid-builder(xl);
+        :root {
+            --c-size: 80%;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        @include grid-builder(xxl);
+        :root {
+            --c-size: 75%;
+        }
+    }
+
+}

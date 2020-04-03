@@ -1,0 +1,81 @@
+// image
+.-img-cv {
+    object-fit: cover;
+}
+
+.-img-cn {
+    object-fit: contain;
+}
+
+.-img-y {
+    max-width: 100%;
+    height: auto;
+}
+
+.-img-x {
+    width: auto;
+    max-height: 100%;
+}
+
+.-img-xy {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.-img-crd {
+    max-width: 50%;
+}
+
+.-img-bx {
+    max-height: 70vh;
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+}
+
+.-img-bg {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
+    filter: blur(4px);
+}
+//
+.-bg {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    border: none;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.-bg-fxd {
+    background-attachment: fixed;
+}
+.-bg-lcl {
+    background-attachment: local;
+}
+
+.-bg-scrl {
+    background-attachment: scroll;
+}
+
+.-bg-cn {
+    background-size: contain;
+}
+
+.-bg-cv {
+    background-size: cover;
+}
+
+.-bg-rpt {
+    background-repeat: no-repeat;
+}

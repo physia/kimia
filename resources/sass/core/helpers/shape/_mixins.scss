@@ -1,0 +1,6 @@
+@import "variables";
+@mixin _cl-colors() {
+    @each $_clr,$clrs in $cl--colors-palette {
+              
+    }
+}

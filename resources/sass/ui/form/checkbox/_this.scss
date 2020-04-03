@@ -1,0 +1,135 @@
+// Elevation
+@import "../../../core/design/elevation/variables";
+@import "../../../core/design/elevation/mixins";
+
+.chk {
+    @extend .rlt, .-d-if,.-z;
+
+    & input {
+        @extend .\.f,.o-0,.abs;
+    }
+
+    & input:not(:checked):indeterminate+.chk-hnd {
+        .hnd {
+            &::after {
+                opacity: 1;
+                transform: rotateZ(0deg) scaleX(1);
+                width: 10px;
+                top: 4px;
+                right: 4px;
+                width: calc(100% - 8px);
+                height: calc(100% - 8px);
+            }
+        }
+    }
+
+    & input:checked+.chk-hnd::before,
+    & input:checked+.chk-hnd .hnd,
+    & input:not(:checked):indeterminate+.chk-hnd .hnd::after {
+        @extend .c-s;
+    }
+
+    & input:checked+.chk-hnd {
+        .hnd {
+            &::before {
+                animation-name: an-chk-hnd-b;
+                animation-duration: .2s;
+                animation-fill-mode: both;
+                animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+                opacity: 1
+            }
+
+            &::after {
+                animation-name: an-chk-hnd-a;
+                animation-duration: .15s;
+                animation-fill-mode: both;
+                animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+                opacity: 1
+            }
+        }
+    }
+
+    & input:focus+.chk-hnd::before,
+    & input:active+.chk-hnd::before {
+        transform: scale(2.4)
+    }
+
+    .s-d {
+        opacity: 0.5
+    }
+}
+
+.chk-hnd {
+    @extend .rlt,.-c-p;
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    border: 2px solid rgba(117, 117, 117, 0.6);
+
+    &::before {
+        content: " ";
+        @extend .abs,.\.t,.\.b,.\.r,.\.l,.\>\>\>,.-z-bg,.-r-c;
+        background-color: rgb(130, 130, 130);
+        opacity: 0.46;
+        transform: scale(0);
+    }
+
+    & .hnd {
+        @extend .abs,.-z-1,.c-n,.-r-i,.\>\>\>;
+        top: -2px;
+        bottom: -2px;
+        right: -2px;
+        left: -2px;
+
+        &::before {
+            @extend .abs,.\>\>\>;
+            content: " ";
+            background-color: rgb(255, 255, 255);
+            width: 13px;
+            height: 2px;
+            bottom: 3px;
+            transform: rotateZ(-45deg) scaleX(0);
+            right: 0.5px;
+            opacity: 0;
+            transform-origin: left top;
+            
+        }
+
+        &::after {
+            @extend .abs,.\>\>\>;
+            content: " ";
+            background-color: rgb(255, 255, 255);
+            width: 6px;
+            height: 2px;
+            bottom: 7px;
+            transform: rotateZ(45deg) scaleX(0);
+            left: 5.2px;
+            transform-origin: left top;
+            opacity: 0;
+        }
+    }
+}
+
+@keyframes an-chk-hnd-a {
+    0% {
+        transform: rotateZ(45deg) scaleX(0);
+    }
+
+    50% {
+        transform: rotateZ(45deg) scaleX(1);
+    }
+
+    100% {
+        transform: rotateZ(45deg) scaleX(1);
+    }
+}
+
+@keyframes an-chk-hnd-b {
+    50% {
+        transform: rotateZ(-45deg) scaleX(0);
+    }
+
+    100% {
+        transform: rotateZ(-45deg) scaleX(1);
+    }
+}

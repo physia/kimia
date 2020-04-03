@@ -1,0 +1,10 @@
+[bxd--name="area"] {
+    width: var(--bxd-width);
+    height: var(--bxd-height);
+}
+
+[bxd="resize"] [bxd--name="frm"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

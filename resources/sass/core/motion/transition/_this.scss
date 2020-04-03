@@ -1,0 +1,30 @@
+// transition
+.\>,
+.h\:\>:hover,
+.a\:\>:active,
+.f\:\>:focus {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-duration: 200ms;
+    animation-duration: 200ms;
+}
+
+.\>\>,
+.h\:\>\>:hover,
+.a\:\>\>:active,
+.f\:\>\>:focus {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-duration: 250ms;
+    animation-duration: 250ms;
+}
+
+.\>\>\>,
+.h\:\>\>\>:hover,
+.a\:\>\>\>:active,
+.f\:\>\>\>:focus {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-duration: 300ms;
+    animation-duration: 300ms
+}

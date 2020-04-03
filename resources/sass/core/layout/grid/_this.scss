@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixins";
+
+:root {
+    --s-margin: 16px;
+    --s-gutter: 16px;
+    --s-column-width: 72px;
+    --m-margin: 16px;
+    --m-gutter: 16px;
+    --m-column-width: 72px;
+    --l-margin: 24px;
+    --l-gutter: 24px;
+    --l-column-width: 72px;
+    --xl-margin: 24px;
+    --xl-gutter: 24px;
+    --xl-column-width: 72px;
+    --xxl-margin: 24px;
+    --xxl-gutter: 24px;
+    --xxl-column-width: 72px;
+}
+
+.g\@ {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 0;
+    //grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+
+//@include _load_grid_media;
+
+
+.c\@ {
+    margin: auto;
+    width: var(--c-size);
+}
