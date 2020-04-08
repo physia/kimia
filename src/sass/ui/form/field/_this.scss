@@ -32,7 +32,7 @@ select {
     color: inherit;
 }
 
-[dark] select option {
+.--dark select option {
     background-color: black;
     color: black;
 }

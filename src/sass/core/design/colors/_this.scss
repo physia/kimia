@@ -14,43 +14,49 @@
  * يمكن استعماله أيضا لتحديد تدرج معين
  * dark and light theme helpers
  * you can use " to select color black to white
- */
+ */ 
+@for $dc from 0 to 21 {
+    .c#{$dc} {
+        background-color: var(--theme-colors-#{$dc})
+    }
+
+    .c#{$dc} {
+        color: var(--theme-colors-#{$dc})
+    }
+
+    .c#{$dc} {
+        border-color: var(--theme-colors-#{$dc})
+    }
+}
 @for $dc from 0 to 21 {
     $color: hsl(0, 0, $dc*5);
-    $_color: 100-($dc*5);
-    
-    $colord: hsl(0, 0, $_color);
-    [light] {
+
+    .--light {
         --theme-colors-#{$dc}: #{$color};
     }
 
-    [dark] { 
-        --theme-colors-#{$dc}: #{$colord};
+    .--dark {
+        --theme-colors-#{$dc}: #{invert($color)};
     }
 
-    @include _cl-init_color_full(c#{$dc}, var(--theme-colors-#{$dc}));
-    .c-#{$dc},
-    [dark] .d#{$dc},
-    [light] .l#{$dc} {
-        background-color: hsl(0, 0, $dc*5) !important
+    .d#{$dc},
+    .l#{$dc}{
+        background-color: var(--theme-colors-#{$dc})
     }
-
-    .c-#{$dc}-t,
-    [dark] .d#{$dc}-t,
-    [light] .l#{$dc}-t {
-        color: hsl(0, 0, $dc*5) !important
+    .d#{$dc}-t,
+    .l#{$dc}-t{
+        color: var(--theme-colors-#{$dc})
     }
-
-    .c-#{$dc}-b,
-    [dark] .d#{$dc}-b,
-    [light] .l#{$dc}-b {
-        border-color: hsl(0, 0, $dc*5) !important
+    .d#{$dc}-b,
+    .l#{$dc}-b{
+        border-color: var(--theme-colors-#{$dc})
     }
-
+    // dynamic theme colores
+    @include _cl-init_color_full(c-#{$dc}, var(--theme-colors-#{$dc}));
 
 }
-@include _cl-color_palette("p", $--cl--ThePrimaryColor, "5");
-@include _cl-color_palette("s", $--cl--TheSecondaryColor, "3");
+@include _cl-color_palette("p", $--cl--primaryColor, "5");
+@include _cl-color_palette("s", $--cl--secondaryColor, "3");
 
 @include _cl-colors();
 

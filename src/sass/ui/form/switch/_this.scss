@@ -77,7 +77,7 @@
     }
 }
 
-[ltr] .swt {
+.--ltr .swt {
     & input:checked+.swt-hnd .hnd {
         transform: translateX(16px);
     }

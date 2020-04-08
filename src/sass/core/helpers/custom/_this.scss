@@ -1,5 +1,3 @@
-
-
 // resize
 .-sz-n {
     resize: none
@@ -8,10 +6,10 @@
 .-sz {
     resize: both
 }
+
 .-sz-y {
     resize: vertical
 }
-
 
 .-sz-x {
     resize: horizontal
@@ -50,6 +48,7 @@
 .-c-n {
     cursor: not-allowed;
 }
+
 .-c-d {
     cursor: default;
 }
@@ -68,21 +67,14 @@
 }
 
 //  user select
+.-s,
 .-s-n {
     user-select: none;
 }
 
-.-s-a,
-.-s-a * {
-    user-select: none;
-}
-
-.-s,
 .-s-a {
     user-select: auto;
 }
-
-
 
 // Pointer events
 .-pe-i {

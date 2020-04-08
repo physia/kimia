@@ -1,5 +1,5 @@
 //  direction
-[rtl] {
+.--rtl {
     --dir: rtl;
     --dir-start: right;
     --dir-end: left;
@@ -8,7 +8,7 @@
     direction: var(--dir, rtl);
 }
 
-[ltr] {
+.--ltr {
     --dir: ltr;
     --dir-start: left;
     --dir-end: right;
@@ -17,9 +17,9 @@
     direction: var(--dir,ltr);
 }
 // theme
-[dark] {
-    background-color: #000;
-    color: rgb(245, 245, 245);
+.--dark {
+    // background-color: #000;
+    // color: rgb(245, 245, 245);
     --is-dark: 1;
     --is-light: 0;
     --theme-text-color:rgb(255, 255, 255);
@@ -28,9 +28,9 @@
     --theme-status-m-opacity:.5;
 }
 
-[light] {
-    background-color: #fff;
-    color: rgb(10, 10, 10);
+.--light {
+    // background-color: #fff;
+    // color: rgb(10, 10, 10);
     --is-dark: 0;
     --is-light: 1;
     --theme-text-color:rgb(10, 10, 10);
@@ -38,13 +38,13 @@
     --theme-status-h-opacity:.87;
     --theme-status-m-opacity:.6;
 }
-[md2] {
+.--md2 {
     --is-md2: 1;
     --is-ios: 0;
     // material design 2
 }
 
-[ios] {
+.--ios {
     --is-ios: 1;
     --is-md2: 0;
     // iOS design style

@@ -6,7 +6,8 @@
     .e-#{$value},
     .h\:e-#{$value}:hover,
     .f\:e-#{$value}:focus,
-    .a\:e-#{$value}:active {
+    .a\:e-#{$value}:active 
+    {
         @include _el-mix($value);
     }
 }

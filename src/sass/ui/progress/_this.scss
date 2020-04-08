@@ -37,7 +37,7 @@
 }
 
 // rtl
-[rtl] {
+.--rtl {
     .prg {
         & .prg-inf {
             &::before {
@@ -52,7 +52,7 @@
 }
 
 // ltr
-[ltr] {
+.--ltr {
     .prg {
         & .prg-inf {
             &::before {
@@ -94,11 +94,11 @@
     animation: an-prgc 2000ms linear infinite both;
 }
 
-[rtl] .prgc.prg-inf circle {
+.--rtl .prgc.prg-inf circle {
     animation: an-prg-crcl-rtl 1200ms infinite both;
 }
 
-[ltr] .prgc.prg-inf circle {
+.--ltr .prgc.prg-inf circle {
     animation: an-prg-crcl-ltr 1200ms infinite both;
 }
 

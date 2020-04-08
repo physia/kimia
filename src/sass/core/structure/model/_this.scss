@@ -79,16 +79,16 @@ $sizes-list: (
         .#{$size}\.r,
         .#{$size}\.x,
         .#{$size}\.f,
-        [rtl] .#{$size}\.s,
-        [ltr] .#{$size}\.e {
+        .--rtl .#{$size}\.s,
+        .--ltr .#{$size}\.e {
             right: 0 !important
         }
 
         .#{$size}\.l,
         .#{$size}\.x,
         .#{$size}\.f,
-        [rtl] .#{$size}\.e,
-        [ltr] .#{$size}\.s {
+        .--rtl .#{$size}\.e,
+        .--ltr .#{$size}\.s {
             left: 0 !important
         }
 
@@ -124,14 +124,14 @@ $sizes-list: (
             }
 
             .#{$size}\.r-#{$_size},
-            [rtl] .#{$size}\.s-#{$_size},
-            [ltr] .#{$size}\.e-#{$_size} {
+            .--rtl .#{$size}\.s-#{$_size},
+            .--ltr .#{$size}\.e-#{$_size} {
                 right: $value !important
             }
 
             .#{$size}\.l-#{$_size},
-            [rtl] .#{$size}\.e-#{$_size},
-            [ltr] .#{$size}\.s-#{$_size} {
+            .--rtl .#{$size}\.e-#{$_size},
+            .--ltr .#{$size}\.s-#{$_size} {
                 left: $value !important
             }
 
@@ -186,15 +186,15 @@ $sizes-list: (
                 }
 
                 .#{$size}p-r-#{$_size},
-                [rtl] .#{$size}p-s-#{$_size},
-                [ltr] .#{$size}p-e-#{$_size},
+                .--rtl .#{$size}p-s-#{$_size},
+                .--ltr .#{$size}p-e-#{$_size},
                 .#{$size}p-x-#{$_size} {
                     padding-right: $value !important
                 }
 
                 .#{$size}p-l-#{$_size},
-                [ltr] .#{$size}p-s-#{$_size},
-                [rtl] .#{$size}p-e-#{$_size},
+                .--ltr .#{$size}p-s-#{$_size},
+                .--rtl .#{$size}p-e-#{$_size},
                 .#{$size}p-x-#{$_size} {
                     padding-left: $value !important
                 }
@@ -222,15 +222,15 @@ $sizes-list: (
             }
 
             .#{$size}m-r-#{$_size},
-            [rtl] .#{$size}m-s-#{$_size},
-            [ltr] .#{$size}m-e-#{$_size},
+            .--rtl .#{$size}m-s-#{$_size},
+            .--ltr .#{$size}m-e-#{$_size},
             .#{$size}m-x-#{$_size} {
                 margin-right: $value !important
             }
 
             .#{$size}m-l-#{$_size},
-            [ltr] .#{$size}m-s-#{$_size},
-            [rtl] .#{$size}m-e-#{$_size},
+            .--ltr .#{$size}m-s-#{$_size},
+            .--rtl .#{$size}m-e-#{$_size},
             .#{$size}m-x-#{$_size} {
                 margin-left: $value !important
             }
@@ -251,14 +251,14 @@ $sizes-list: (
             }
 
             .#{$size}\.r-#{$_size},
-            [rtl] .#{$size}\.s-#{$_size},
-            [ltr] .#{$size}\.e-#{$_size} {
+            .--rtl .#{$size}\.s-#{$_size},
+            .--ltr .#{$size}\.e-#{$_size} {
                 right: $value !important
             }
 
             .#{$size}\.l-#{$_size},
-            [rtl] .#{$size}\.e-#{$_size},
-            [ltr] .#{$size}\.s-#{$_size} {
+            .--rtl .#{$size}\.e-#{$_size},
+            .--ltr .#{$size}\.s-#{$_size} {
                 left: $value !important
             }
 

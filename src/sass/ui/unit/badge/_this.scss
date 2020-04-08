@@ -40,14 +40,14 @@
     z-index: 10;
 }
 
-[rtl] .bdg-f,
+.--rtl .bdg-f,
 .bdg-l {
     right: auto;
     left: 0;
     transform: translate(-20%, -20%);
 }
 
-[ltr] .bdg-f,
+.--ltr .bdg-f,
 .bdg-r {
     right: 0;
     left: auto;
