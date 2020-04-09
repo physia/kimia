@@ -12,3 +12,37 @@ $media-sizes: ("s\\:": 479px, "m\\:": 480px, "l\\:": 840px, "xl\\:": 1201px);
         }
     }
 }
+// // rule
+// @mixin rule($rule, $screens: "m\\:") {
+//     @warn str-split($screens, " ");
+//     @each $screen in str-split($screens, " ") {
+//         @include media($screen) {
+//             #{$rule} {
+//                 @content
+//             }
+//         }
+//     }
+// }
+// rule
+$screens-sizes: ("s": 479px, "m": 480px, "l": 840px, "xl": 1201px);
+$current_screen: "screen_size" !global;
+@mixin __($screens: "s l") {
+    @each $screen in str-split($screens, " ") {
+        $current_screen: $screen !global;
+        @if $screen=="s" {
+            @content
+        } @else {
+            @media only screen and (min-width: map-get($screens-sizes, $screen)) {
+                @content 
+            }
+        }
+    }
+}
+@mixin _($screens: $current_screen, $from: 2, $start: ".") {
+    @warn str-split($screens, " ");
+    @each $screen in str-split($screens, " ") {
+        @at-root #{$start+$screen+"\\:"+str-slice(quote(&), $from)} {
+            @content
+        }
+    }
+}

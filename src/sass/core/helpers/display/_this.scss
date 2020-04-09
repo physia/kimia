@@ -1,10 +1,20 @@
 // display
-.-d-n {
-    display: none
-}
-
-.-d-b {
-    display: block
+@include __ {
+    .-d-b {
+        @include _ {
+            display: block !important
+        }
+    }
+    .-d-n {
+        @include _ {
+        display: none !important
+        }
+    }
+    .-d-i {
+        @include _ {
+            display: inherit
+        }
+    }
 }
 
 .-d-f {
@@ -37,8 +47,4 @@
 
 .-d-uns {
     display: unset
-}
-
-.-d-i {
-    display: inherit
 }
