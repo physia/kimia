@@ -22,7 +22,7 @@
     & input:checked+.swt-hnd .hnd,
     & input:checked+.swt-hnd .hnd::before {
         background-color: rgb(149, 117, 205);
-        background-color: var(--clr-s, rgb(149, 117, 205));
+        background-color: var(--c-s, rgb(149, 117, 205));
     }
 
     & input:checked+.swt-hnd .hnd {
@@ -60,6 +60,7 @@
     }
 
     & .hnd {
+        @extend .e;
         width: 20px;
         height: 20px;
         background-color: rgba(255, 255, 255, 0.98);
@@ -67,7 +68,6 @@
         transform: translateX(0);
         z-index: 2;
         transition: all 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
-        @include _el-mix(1);
 
         &::before {
             background-color: rgba(130, 130, 130, 0.2);

@@ -1,29 +1,3 @@
-// media
-$media-sizes: ("s\\:": 479px, "m\\:": 480px, "l\\:": 840px, "xl\\:": 1201px);
-
-@mixin media($_size) {
-    @if $_size=="" {
-        @content
-    }
-
-    @else {
-        @media only screen and (min-width: map-get($media-sizes, $_size)) {
-            @content
-        }
-    }
-}
-// // rule
-// @mixin rule($rule, $screens: "m\\:") {
-//     @warn str-split($screens, " ");
-//     @each $screen in str-split($screens, " ") {
-//         @include media($screen) {
-//             #{$rule} {
-//                 @content
-//             }
-//         }
-//     }
-// }
-// rule
 $screens-sizes: ("s": 479px, "m": 480px, "l": 840px, "xl": 1201px);
 $current_screen: "screen_size" !global;
 @mixin __($screens: "s l") {
@@ -38,11 +12,69 @@ $current_screen: "screen_size" !global;
         }
     }
 }
-@mixin _($screens: $current_screen, $from: 2, $start: ".") {
-    @warn str-split($screens, " ");
-    @each $screen in str-split($screens, " ") {
-        @at-root #{$start+$screen+"\\:"+str-slice(quote(&), $from)} {
-            @content
+
+@mixin _($props: $current_screen, $from: 2, $start: ".", $end: "") {
+    $selecterName: "" !default;
+
+    $onNormal: false !default;
+    $onHover: false !default;
+    $onFocus: false !default;
+    $onActive: false !default;
+
+    @each $prop in str-split($props, " ") {
+
+
+        & {
+            @if $prop=="s"or $prop=="n" {
+                $onNormal: true;
+            }
+
+            @if $prop=="h" {
+                $onHover: true;
+            }
+
+            @if $prop=="f" {
+                $onFocus: true;
+            }
+
+            @if $prop=="a" {
+                $onActive: true;
+            }
+
         }
+
+        @if $prop !="s"and $prop !="n" {
+            @if $prop=="m"or $prop=="l"or $prop=="xl" {
+                @at-root #{$start+$prop+"\\:"+str-slice(quote(&), $from)+$end} {
+                    @content
+                }
+            }
+        }
+    }
+
+    & {
+        $selecterName: #{&};
+        @if $onNormal {
+        @content
+        }
+
+        @if $onHover {
+            @at-root #{$start+"h\\:"+str-slice(quote(&), $from)+$end+":hover"} {
+                @extend #{$selecterName}
+            }
+        }
+
+        @if $onFocus {
+            @at-root #{$start+"f\\:"+str-slice(quote(&), $from)+$end+":focus"} {
+                @extend #{$selecterName}
+            }
+        }
+
+        @if $onActive {
+            @at-root #{$start+"a\\:"+str-slice(quote(&), $frome)+$end+":active"} {
+                @extend #{$selecterName}
+            }
+        }
+
     }
 }

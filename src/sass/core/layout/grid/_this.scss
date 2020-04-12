@@ -18,20 +18,15 @@
     --xxl-gutter: 24px;
     --xxl-column-width: 72px;
 }
-
-.g\@ {
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    margin: 0;
+.g {
+    @extend .b-fw;
     //grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
+// container
+.g-c {
+    width: var(--c-size, map-get($screens-sizes, "l"));
+    @extend .m-a, .w-mx;
+}
 
 //@include _load_grid_media;
-
-
-.c\@ {
-    margin: auto;
-    width: var(--c-size);
-}

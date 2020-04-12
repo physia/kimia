@@ -42,12 +42,12 @@
     }
 
     &::-moz-range-progress {
-        background-color: var(--clr-s);
+        background-color: var(--c-s);
         border-radius: var(--rng-r);
     }
 
     &::-moz-range-thumb {
-        background-color: var(--clr-s);
+        background-color: var(--c-s);
         height: 14px;
         width: 14px;
         border-radius: 10px;
@@ -57,7 +57,7 @@
     }
 
     &::-webkit-slider-thumb {
-        background-color: var(--clr-s);
+        background-color: var(--c-s);
         height: 14px;
         width: 14px;
         border-radius: 10px;

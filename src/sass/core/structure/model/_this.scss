@@ -1,311 +1,405 @@
 @import "variables";
 @import "mixins";
-$sizes-list: (
-    "",
-    //"s\\:",
-    "m\\:",
-    "l\\:",
-    "xl\\:",
-);
 
-@each $size in $sizes-list {
-    @include media($size) {
+@include __ {
 
-        :root {
-            @if $size == "" {
-                --is-screen-s: 1;
-            } @else {
-                --is-screen-s: 0;
-            }
-            @if $size == "m\\:" {
-                --is-screen-m: 1;
-            } @else {
-                --is-screen-m: 0;
-            }
-            @if $size == "l\\:" {
-                --is-screen-l: 1;
-            } @else {
-                --is-screen-l: 0;
-            }
-            @if $size == "xl\\:" {
-                --is-screen-xl: 1;
-            } @else {
-                --is-screen-xl: 0;
-            }
+    :root {
+        @if $current_screen=="s" {
+            --is-screen-s: 1;
         }
- 
-        // display
-        .#{$size}-d-b {
-            display: block !important
+    
+        @else {
+            --is-screen-s: 0;
         }
+    
+        @if $current_screen=="m" {
+            --is-screen-m: 1;
+        }
+    
+        @else {
+            --is-screen-m: 0;
+        }
+    
+        @if $current_screen=="l" {
+            --is-screen-l: 1;
+        }
+    
+        @else {
+            --is-screen-l: 0;
+        }
+    
+        @if $current_screen=="xl" {
+            --is-screen-xl: 1;
+        }
+    
+        @else {
+            --is-screen-xl: 0;
+        }
+    }
 
-        .#{$size}-d-n {
-            display: none !important
-        }
-        // position
-        .#{$size}rlt {
+    // position
+    .rlt {
+        @include _ {
             position: relative
         }
+    }
 
-        .#{$size}abs {
+    .abs {
+        @include _ {
             position: absolute
         }
+    }
 
-        .#{$size}stc {
+    .stc {
+        @include _ {
             position: sticky
         }
+    }
 
-        .#{$size}fxd {
+    .fxd {
+        @include _ {
             position: fixed
         }
+    }
 
-        .#{$size}stt {
+    .stt {
+        @include _ {
             position: static
         }
+    }
 
 
-        .#{$size}\.t,
-        .#{$size}\.y,
-        .#{$size}\.f {
+    .\.t,
+    .\.y,
+    .\.f {
+        @include _ {
             top: 0 !important
         }
+    }
 
-        .#{$size}\.b,
-        .#{$size}\.y,
-        .#{$size}\.f {
+    .\.b,
+    .\.y,
+    .\.f {
+        @include _ {
             bottom: 0 !important
         }
+    }
 
-        .#{$size}\.r,
-        .#{$size}\.x,
-        .#{$size}\.f,
-        .--rtl .#{$size}\.s,
-        .--ltr .#{$size}\.e {
+    .\.r,
+    .\.x,
+    .\.f,
+    .--rtl .\.s,
+    .--ltr .\.e {
+        @include _ {
             right: 0 !important
         }
+    }
 
-        .#{$size}\.l,
-        .#{$size}\.x,
-        .#{$size}\.f,
-        .--rtl .#{$size}\.e,
-        .--ltr .#{$size}\.s {
+    .\.l,
+    .\.x,
+    .\.f,
+    .--rtl .\.e,
+    .--ltr .\.s {
+        @include _ {
             left: 0 !important
         }
+    }
 
-        .#{$size}\.f {
+    .\.f {
+        @include _ {
             width: 100%;
             height: 100%;
         }
+    }
 
-        .#{$size}\.c-x,
-        .#{$size}\.c {
+    .\.c-x,
+    .\.c {
+        @include _ {
             right: 50%;
             transform: translateX(50%);
         }
+    }
 
-        .#{$size}\.c-y,
-        .#{$size}\.c {
+    .\.c-y,
+    .\.c {
+        @include _ {
             top: 50%;
             transform: translateY(-50%);
         }
+    }
 
-        .\.c {
+    .\.c {
+        @include _ {
             transform: translate(50%, -50%)
         }
+    }
 
-        @each $_size,
-        $value in $md--sizes {
-            .#{$size}\.t-#{$_size} {
+    @each $_size,
+    $value in $md--sizes {
+        .\.t-#{$_size} {
+            @include _ {
                 top: $value !important
             }
+        }
 
-            .#{$size}\.b-#{$_size} {
+        .\.b-#{$_size} {
+            @include _ {
                 bottom: $value !important
             }
+        }
 
-            .#{$size}\.r-#{$_size},
-            .--rtl .#{$size}\.s-#{$_size},
-            .--ltr .#{$size}\.e-#{$_size} {
+        .\.r-#{$_size},
+        .--rtl .\.s-#{$_size},
+        .--ltr .\.e-#{$_size} {
+            @include _ {
                 right: $value !important
             }
+        }
 
-            .#{$size}\.l-#{$_size},
-            .--rtl .#{$size}\.e-#{$_size},
-            .--ltr .#{$size}\.s-#{$_size} {
+        .\.l-#{$_size},
+        .--rtl .\.e-#{$_size},
+        .--ltr .\.s-#{$_size} {
+            @include _ {
                 left: $value !important
             }
+        }
 
-            .#{$size}w-#{$_size},
-            .#{$size}u-#{$_size} {
+        .w-#{$_size},
+        .u-#{$_size} {
+            @include _ {
                 width: $value !important
             }
+        }
 
-            .#{$size}h-#{$_size},
-            .#{$size}u-#{$_size} {
+        .h-#{$_size},
+        .u-#{$_size} {
+            @include _ {
                 height: $value !important
             }
+        }
 
-            @if $size !="a" {
-                .#{$size}lh-#{$_size} {
+        @if $_size !="a" {
+            .lh-#{$_size} {
+                @include _ {
                     line-height: $value !important
                 }
+            }
 
-                // padding
-                .#{$size}p-#{$_size} {
+            // padding
+            .p-#{$_size} {
+                @include _ {
                     padding: $value;
                 }
             }
+        }
 
-            // margin
-            .#{$size}m-#{$_size} {
+        // margin
+        .m-#{$_size} {
+            @include _ {
                 margin: $value;
             }
         }
+    }
 
-        @each $_size,
-        $value in $md--sizes {
-            @if $size !="a" {
-                .#{$size}p-x {
+    @each $_size,
+    $value in $md--sizes {
+        @if $_size !="a" {
+            .p-x {
+                @include _ {
                     padding-right: 0;
-                    padding-left: 0;
                 }
 
-                .#{$size}p-y {
+                padding-left: 0;
+            }
+
+            .p-y {
+                @include _ {
                     padding-top: 0;
-                    padding-bottom: 0;
                 }
 
-                .#{$size}p-t-#{$_size},
-                .#{$size}p-y-#{$_size} {
+                padding-bottom: 0;
+            }
+
+            .p-t-#{$_size},
+            .p-y-#{$_size} {
+                @include _ {
                     padding-top: $value !important
                 }
+            }
 
-                .#{$size}p-b-#{$_size},
-                .#{$size}p-y-#{$_size} {
+            .p-b-#{$_size},
+            .p-y-#{$_size} {
+                @include _ {
                     padding-bottom: $value !important
                 }
+            }
 
-                .#{$size}p-r-#{$_size},
-                .--rtl .#{$size}p-s-#{$_size},
-                .--ltr .#{$size}p-e-#{$_size},
-                .#{$size}p-x-#{$_size} {
+            .p-r-#{$_size},
+            .--rtl .p-s-#{$_size},
+            .--ltr .p-e-#{$_size},
+            .p-x-#{$_size} {
+                @include _ {
                     padding-right: $value !important
                 }
+            }
 
-                .#{$size}p-l-#{$_size},
-                .--ltr .#{$size}p-s-#{$_size},
-                .--rtl .#{$size}p-e-#{$_size},
-                .#{$size}p-x-#{$_size} {
+            .p-l-#{$_size},
+            .--ltr .p-s-#{$_size},
+            .--rtl .p-e-#{$_size},
+            .p-x-#{$_size} {
+                @include _ {
                     padding-left: $value !important
                 }
             }
+        }
 
-            // margin
-            .#{$size}m-x {
+        // margin
+        .m-x {
+            @include _ {
                 margin-right: 0;
                 margin-left: 0;
             }
+        }
 
-            .#{$size}m-y {
+        .m-y {
+            @include _ {
                 margin-top: 0;
                 margin-bottom: 0;
             }
+        }
 
-            .#{$size}m-t-#{$_size},
-            .#{$size}m-y-#{$_size} {
+        .m-t-#{$_size},
+        .m-y-#{$_size} {
+            @include _ {
                 margin-top: $value !important
             }
+        }
 
-            .#{$size}m-b-#{$_size},
-            .#{$size}m-y-#{$_size} {
+        .m-b-#{$_size},
+        .m-y-#{$_size} {
+            @include _ {
                 margin-bottom: $value !important
             }
+        }
 
-            .#{$size}m-r-#{$_size},
-            .--rtl .#{$size}m-s-#{$_size},
-            .--ltr .#{$size}m-e-#{$_size},
-            .#{$size}m-x-#{$_size} {
+        .m-r-#{$_size},
+        .--rtl .m-s-#{$_size},
+        .--ltr .m-e-#{$_size},
+        .m-x-#{$_size} {
+            @include _ {
                 margin-right: $value !important
             }
+        }
 
-            .#{$size}m-l-#{$_size},
-            .--ltr .#{$size}m-s-#{$_size},
-            .--rtl .#{$size}m-e-#{$_size},
-            .#{$size}m-x-#{$_size} {
+        .m-l-#{$_size},
+        .--ltr .m-s-#{$_size},
+        .--rtl .m-e-#{$_size},
+        .m-x-#{$_size} {
+            @include _ {
                 margin-left: $value !important
             }
         }
-        @for $i from 1 to 13 {
-            .#{$size}x#{$i} {
+    }
+
+    @for $i from 1 to 13 {
+        .x#{$i} {
+            @include _ {
                 width: calc(100% * #{$i} / 12) !important;
             }
         }
-        @each $_size,
-        $value in $md--sizes-c {
-            .#{$size}\.t-#{$_size} {
+    }
+
+    @each $_size,
+    $value in $md--sizes-c {
+        .\.t-#{$_size} {
+            @include _ {
                 top: $value !important
             }
+        }
 
-            .#{$size}\.b-#{$_size} {
+        .\.b-#{$_size} {
+            @include _ {
                 bottom: $value !important
             }
+        }
 
-            .#{$size}\.r-#{$_size},
-            .--rtl .#{$size}\.s-#{$_size},
-            .--ltr .#{$size}\.e-#{$_size} {
+        .\.r-#{$_size},
+        .--rtl .\.s-#{$_size},
+        .--ltr .\.e-#{$_size} {
+            @include _ {
                 right: $value !important
             }
+        }
 
-            .#{$size}\.l-#{$_size},
-            .--rtl .#{$size}\.e-#{$_size},
-            .--ltr .#{$size}\.s-#{$_size} {
+        .\.l-#{$_size},
+        .--rtl .\.e-#{$_size},
+        .--ltr .\.s-#{$_size} {
+            @include _ {
                 left: $value !important
             }
+        }
 
-            .#{$size}w-#{$_size},
-            .#{$size}u-#{$_size} {
+        .w-#{$_size},
+        .u-#{$_size} {
+            @include _ {
                 width: $value !important
             }
+        }
 
-            .#{$size}h-#{$_size},
-            .#{$size}u-#{$_size} {
+        .h-#{$_size},
+        .u-#{$_size} {
+            @include _ {
                 height: $value !important;
             }
+        }
 
-            .#{$size}lh-#{$_size} {
+        .lh-#{$_size} {
+            @include _ {
                 line-height: $value !important
             }
         }
+    }
 
-        @each $_size,
-        $value in $font--sizes {
-            .#{$size}\##{$_size} {
+    @each $_size,
+    $value in $font--sizes {
+        .\##{$_size} {
+            @include _ {
                 font-size: $value !important
             }
         }
+    }
 
-        .#{$size}u-v {
+    .u-v {
+        @include _ {
             width: 100vw;
             height: 100vh
         }
+    }
 
-        .#{$size}w-mx,
-        .#{$size}u-mx {
+    .w-mx,
+    .u-mx {
+        @include _ {
             max-width: 100%;
         }
+    }
 
-        .#{$size}w-mn,
-        .#{$size}u-mn {
+    .w-mn,
+    .u-mn {
+        @include _ {
             min-width: 100%;
         }
+    }
 
-        .#{$size}h-mx,
-        .#{$size}u-mx {
+    .h-mx,
+    .u-mx {
+        @include _ {
             max-height: 100%;
         }
+    }
 
-        .#{$size}h-mn,
-        .#{$size}u-mn {
+    .h-mn,
+    .u-mn {
+        @include _ {
             min-height: 100%;
         }
     }

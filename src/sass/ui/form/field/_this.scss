@@ -11,7 +11,7 @@
 
     &:not(.fld-n) {
         background-image: linear-gradient(rgb(149, 117, 205), rgb(149, 117, 205));
-        background-image: linear-gradient(var(--clr-s, rgb(149, 117, 205)), var(--clr-s, rgb(149, 117, 205))), linear-gradient(to right, rgba(135, 135, 135, 0.3), rgba(111, 111, 111, 0.35), rgba(135, 135, 135, 0.3));
+        background-image: linear-gradient(var(--c-s, rgb(149, 117, 205)), var(--c-s, rgb(149, 117, 205))), linear-gradient(to right, rgba(135, 135, 135, 0.3), rgba(111, 111, 111, 0.35), rgba(135, 135, 135, 0.3));
         background-size: 0 2px, 100% 1px;
         background-repeat: no-repeat;
         background-position: center bottom;
@@ -103,7 +103,7 @@ select {
 
 .fld:focus~.fld-lbl {
     color: rgb(149, 117, 205);
-    color: var(--clr-s, rgb(149, 117, 205));
+    color: var(--c-s, rgb(149, 117, 205));
 }
 
 .unt-fld {

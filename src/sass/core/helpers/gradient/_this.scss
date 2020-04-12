@@ -18,3 +18,12 @@
 .-grdnt-r {
     background-image: linear-gradient(to right, var(--grdnt-start, transparent), var(--grdnt-end, rgba(0, 0, 0, 0.6)));
 }
+
+// center x
+.-grdnt-x {
+    background-image: linear-gradient(to right, var(--grdnt-start, transparent), var(--grdnt-in, rgba(0, 0, 0, 0.6)), var(--grdnt-end, transparent));
+}
+// center y
+.-grdnt-y {
+    background-image: linear-gradient(to bottom, var(--grdnt-start, transparent), var(--grdnt-in, rgba(0, 0, 0, 0.6)), var(--grdnt-end, transparent));
+}

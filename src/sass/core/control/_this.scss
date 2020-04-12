@@ -28,6 +28,12 @@
     --theme-status-m-opacity:.5;
 }
 
+html.--dark,
+body.--dark {
+    background-color: black;
+    color: #EEE;
+}
+
 .--light {
     // background-color: #fff;
     // color: rgb(10, 10, 10);
@@ -38,6 +44,13 @@
     --theme-status-h-opacity:.87;
     --theme-status-m-opacity:.6;
 }
+
+html.--light,
+body.--light {
+    background-color: white;
+    color: #222;
+}
+
 .--md2 {
     --is-md2: 1;
     --is-ios: 0;

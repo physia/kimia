@@ -1,4 +1,19 @@
-$--cl--primaryColor: "tl";
-$--cl--secondaryColor: "pnk";
-// Elevation
-$--el--TheDefaultElevation: 2;
+/* <CORE> */
+/* ../DESIGN */
+
+/* -->COLORS<-- */
+$--colors--pseudo-defealt: "n h f";
+$--colors--primaryColor: "tl";
+$--colors--secondaryColor: "pnk";
+// config
+$--colors--active-border: false;
+
+/* -->ELEVATION<-- */
+$--elevation--pseudo-defealt: "n h f";
+$--elevation--defaultElevation: 2;
+$--elevation--range: 12;
+// config
+$--elevation--active-umbra: false;
+$--elevation--active-penumbra: false;
+$--elevation--active-ambient: true;
+$--elevation--active-end: false;

@@ -1,27 +1,40 @@
 
-// display
-@include __ {
-    .-d-b {
-        @include _ {
-            display: block !important
-        }
-    }
 
-    .-d-n {
-        @include _ {
-            display: none !important
-        }
-    }
-
-    .-d-i {
-        @include _ {
-            display: inherit
-        }
-    }
+.-d-f {
+    display: flex
 }
+
+.-d-g {
+    display: grid
+}
+
+.-d-t {
+    display: table
+}
+
+.-d-ib {
+    display: inline-block
+}
+
+.-d-ig {
+    display: inline-grid
+}
+
+.-d-if {
+    display: inline-flex
+}
+
+.-d-it {
+    display: inline-table
+}
+
+.-d-uns {
+    display: unset
+}
+
 // Box...
 .b {
-    @extend .-d-f
+    @extend .-d-f;
 }
 .b-fg {
     flex-grow: 1;
@@ -30,6 +43,7 @@
 .b-fg-0 {
     flex-grow: 0;
 }
+
 .b-fs {
     flex-shrink: 0;
 }
@@ -39,24 +53,15 @@
 }
 
 .b-fw {
+    @extend .b;
     flex-wrap: wrap
 }
 
 .b-fw-n {
+    @extend .b;
     flex-wrap: nowrap
 }
 
-.b-rw,
-.b-x {
-    @extend .b;
-    flex-direction: row;
-}
-
-.b-cl,
-.b-y {
-    @extend .b;
-    flex-direction: column;
-}
 
 // spacer
 .b-sp {
@@ -70,12 +75,14 @@
     align-items: center;
 }
 
-.b-a-s {
+.b-a-s,
+.b-s {
     @extend .b;
     align-items: flex-start;
 }
 
-.b-a-e {
+.b-a-e,
+.b-e {
     @extend .b;
     align-items: flex-end;
 }
@@ -103,12 +110,14 @@
     justify-content: center;
 }
 
-.b-j-s {
+.b-j-s,
+.b-s {
     @extend .b;
     justify-content: flex-start;
 }
 
-.b-j-e {
+.b-j-e,
+.b-e {
     @extend .b;
     justify-content: flex-end;
 }
@@ -174,8 +183,9 @@
     vertical-align: middle
 }
 
-// float
 @include __ {
+
+    // float
     .f-n {
         @include _ {
             float: none
@@ -209,6 +219,42 @@
     .f-e {
         @include _ {
             float: var(--dir-end)
+        }
+    }
+
+    // display
+    .-d-b {
+        @include _ {
+            display: block !important
+        }
+    }
+
+    .-d-n {
+        @include _ {
+            display: none !important
+        }
+    }
+
+    .-d-i {
+        @include _ {
+            display: inherit
+        }
+    }
+
+    // box
+    .b-rw,
+    .b-x {
+        @include _ {
+            @extend .b;
+            flex-direction: row;
+        }
+    }
+
+    .b-cl,
+    .b-y {
+        @include _ {
+            @extend .b;
+            flex-direction: column;
         }
     }
 }

@@ -1,6 +1,3 @@
 @import "variables";
-@mixin _cl-colors() {
-    @each $_clr,$clrs in $cl--colors-palette {
-              
-    }
+@mixin _shape-border($size,$dir) {
 }

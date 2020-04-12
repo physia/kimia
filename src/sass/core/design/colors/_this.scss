@@ -1,7 +1,6 @@
 @import "variables";
 @import "functions";
 @import "mixins";
-
 /*
  * Physia css color system
  * {c|d|l}-{*}-{*}: background color لون الخلفية
@@ -15,19 +14,27 @@
  * dark and light theme helpers
  * you can use " to select color black to white
  */ 
+ .c-c,
+ .c-s,
+ .c-n,
+ .c-17 {
+     color: #000;
+ }
 @for $dc from 0 to 21 {
     .c#{$dc} {
         background-color: var(--theme-colors-#{$dc})
     }
 
-    .c#{$dc} {
+    .c#{$dc}-t {
         color: var(--theme-colors-#{$dc})
     }
-
-    .c#{$dc} {
-        border-color: var(--theme-colors-#{$dc})
+    @if $--colors--active-border {
+        .c#{$dc}-b {
+            border-color: var(--theme-colors-#{$dc})
+        }
     }
 }
+
 @for $dc from 0 to 21 {
     $color: hsl(0, 0, $dc*5);
 
@@ -47,16 +54,19 @@
     .l#{$dc}-t{
         color: var(--theme-colors-#{$dc})
     }
-    .d#{$dc}-b,
-    .l#{$dc}-b{
-        border-color: var(--theme-colors-#{$dc})
+    @if $--colors--active-border {
+        .d#{$dc}-b,
+        .l#{$dc}-b{
+            border-color: var(--theme-colors-#{$dc})
+        }
     }
     // dynamic theme colores
     @include _cl-init_color_full(c-#{$dc}, var(--theme-colors-#{$dc}));
 
 }
-@include _cl-color_palette("p", $--cl--primaryColor, "5");
-@include _cl-color_palette("s", $--cl--secondaryColor, "3");
+
+@include _cl-color_palette("p", $--colors--primaryColor, "5");
+@include _cl-color_palette("s", $--colors--secondaryColor, "3");
 
 @include _cl-colors();
 
@@ -66,22 +76,27 @@ $color in $cl--colors {
 }
 
 // ألوان تحديد الأوضاع، خطأ، تحذير، تنبيه...إلخ
-// static colors wrong, error,...
+// static colors: wrong, error,...
+:root {
+    @each $name,
+    $color in $cl--static-colors {
+        --c-#{$name}: $color;
+    }
+}
+
 @each $name,
 $color in $cl--static-colors {
-    .c-#{$name} {
-        @include _cl-background_color($color);
-    }
-
-    .c-#{$name}-t {
-        @include _cl-text_color($color);
-    }
-
-    .c-#{$name}-b {
-        @include _cl-border_color($color);
-    }
+    @include _cl-init_color(#{$name}, var(--c-#{$name}));
 
     .c-#{$name}-f {
-        @include _cl-fill_color($color);
+        @include _cl-fill_color(var(--c-#{$name}));
     }
+}
+
+//
+::selection,
+::-moz-selection {
+    color: white;
+    background-color: var(--c-s);
+    caret-color: currentColor;
 }

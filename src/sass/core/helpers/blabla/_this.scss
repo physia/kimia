@@ -1,14 +1,10 @@
 .-bla {
-    position: relative;
-    background-color: var(--theme-colors-16);
-    border-radius: inherit;
-    overflow: hidden;
+    @extend .rlt, .-o-h, .-r-i, .c-17;
 }
 
 .-bla::before {
-    @extend .anm,.abs,.\.f;
+    @extend .anm,.abs, .\.f, .-grdnt-x;
     content: " ";
-  background-image: linear-gradient(90deg, transparent, var(--theme-colors-17), transparent);
     animation-name: anm-sld;
     --anm--sld-opacity-from: 1;
     --anm--sld-opacity-to: 1;

@@ -3,7 +3,7 @@
 @import "../../../core/design/elevation/mixins";
 
 .chk {
-    @extend .rlt, .-d-if,.-z;
+    @extend .rlt, .-d-f,.-z;
 
     & input {
         @extend .\.f,.o-0,.abs;

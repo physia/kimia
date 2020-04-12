@@ -28,3 +28,11 @@
     transition-duration: 300ms;
     animation-duration: 300ms
 }
+//
+.\>-n {
+    transition: none;
+}
+
+.\>-i {
+    transition: inherit;
+}

@@ -1,6 +1,6 @@
 // overflow
 .-o-a,
-.h\:o-a:hover {
+.h\:-o-a {
     overflow: auto !important
 }
 
@@ -19,10 +19,11 @@
     overflow-x: visible;
 }
 
-.-o-x-a,
-.h\:o-x-a:hover {
+.h\:-o-x-a,
+.-o-x-a {
     overflow-x: auto;
 }
+
 
 .-o-x-n {
     overflow-x: initial
@@ -32,14 +33,11 @@
 .-o-h {
     overflow-y: hidden;
 }
-
 .-o-y-v,
-.h\:-o-y-v:hover,
 .-o-v {
     overflow-y: visible;
 }
-
-.h\:-o-y-a:hover,
+.h\:-o-y-a,
 .-o-y-a {
     overflow-y: auto;
 }
@@ -57,4 +55,25 @@
 
 .-o-s {
     overflow: scroll
+}
+// hover
+@media not all and (hover: none) {
+    .h\:-o-x-a,
+    .h\:-o-y-a,
+    .h\:-o-a {
+        overflow: hidden;
+    }
+
+    .h\:-o-x-a:hover {
+        overflow-x: auto !important
+    }
+
+    .h\:-o-y-a:hover {
+        overflow-y: auto !important
+    }
+
+    .h\:-o-a:hover {
+        overflow-y: auto !important
+    }
+
 }

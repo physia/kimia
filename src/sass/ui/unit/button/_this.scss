@@ -9,7 +9,7 @@ button {
     color: #fff;
     height: 36px;
     background-color: rgb(149, 117, 205);
-    background-color: var(--clr-s, rgb(149, 117, 205));
+    background-color: var(--c-s, rgb(149, 117, 205));
 }
 .btn,
 .btn-n,
@@ -27,23 +27,20 @@ button {
 
 .btn-f.e {
     @extend .e-6;
-    //@include _el-mix(6);
 }
 
 .btn-f.e:hover {
     @extend .e-8;
-   // @include _el-mix(8);
 }
 
 .btn-f.e:active {
-    @extend .e-16;
-    //@include _el-mix(16);
+    @extend .e-12;
 }
 
 .btn-n {
     height: 36px;
     color: rgb(149, 117, 205);
-    color: var(--clr-s, rgb(149, 117, 205));
+    color: var(--c-s, rgb(149, 117, 205));
     background-color: transparent !important;
 }
 
