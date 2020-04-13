@@ -4,7 +4,7 @@
     "description": "Frontend framework",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "css": "grunt css",
         "run": "grunt run"
     },
     "repository": {
@@ -58,7 +58,6 @@
     "files": [
         "dist",
         "src",
-        "Gruntfile.js",
         "LICENSE"
     ]
 }
