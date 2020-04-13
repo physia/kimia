@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://kimia.physia.dev/framework">
-    <img src="https://kimia.physia.dev/framework/images/enlogo.png">
+    <img src="https://kimia.physia.dev/images/enlogo.png">
   </a>
 </p>
 
