@@ -21,8 +21,7 @@
     & input:checked+.swt-hnd::before,
     & input:checked+.swt-hnd .hnd,
     & input:checked+.swt-hnd .hnd::before {
-        background-color: rgb(149, 117, 205);
-        background-color: var(--c-s, rgb(149, 117, 205));
+        background-color: var(--c-s);
     }
 
     & input:checked+.swt-hnd .hnd {

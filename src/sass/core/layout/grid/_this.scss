@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixins";
 
-:root {
+.--env {
     --s-margin: 16px;
     --s-gutter: 16px;
     --s-column-width: 72px;

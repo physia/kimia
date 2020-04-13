@@ -8,8 +8,7 @@ button {
 .fll {
     color: #fff;
     height: 36px;
-    background-color: rgb(149, 117, 205);
-    background-color: var(--c-s, rgb(149, 117, 205));
+    background-color: var(--c-s);
 }
 .btn,
 .btn-n,
@@ -39,8 +38,7 @@ button {
 
 .btn-n {
     height: 36px;
-    color: rgb(149, 117, 205);
-    color: var(--c-s, rgb(149, 117, 205));
+    color: var(--c-s);
     background-color: transparent !important;
 }
 

@@ -19,8 +19,7 @@
         bottom: 0;
         right: 0;
         height: inherit;
-        background-color: rgb(149, 117, 205);
-        background-color: var(--c-s, rgb(149, 117, 205));
+        background-color: var(--c-s);
 
     }
 
@@ -80,8 +79,7 @@
         stroke-dasharray: 114;
         stroke-width: 3px;
         fill: none;
-        stroke: rgb(149, 117, 205);
-        stroke: var(--c-s, rgb(149, 117, 205));
+        stroke: var(--c-s);
         will-change: stroke-dashoffset, transform;
         transition-property: stroke-dashoffset;
         transition-duration: 300ms;

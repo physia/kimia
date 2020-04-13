@@ -25,14 +25,12 @@
     }
 
     & input:checked+.rdo-hnd {
-        border-color: rgb(149, 117, 205);
-        border-color: var(--c-s, rgb(149, 117, 205));
+        border-color: var(--c-s);
     }
 
     & .rdo-hnd .hnd,
     & input:checked+.rdo-hnd::before {
-        background-color: rgb(149, 117, 205);
-        background-color: var(--c-s, rgb(149, 117, 205));
+        background-color: var(--c-s);
     }
 
     & input:focus+.rdo-hnd::before,

@@ -1,6 +1,8 @@
 @mixin _cl-color_palette($clr, $name, $value) {
     $colors: Cl-getColor($name);
-    :root {
+
+    .--env {
+
         @each $__clr,
         $hex in $colors {
             @if $__clr=="3"and $clr=="s" {
@@ -30,6 +32,19 @@
 }
 
 @mixin _cl-colors() {
+    .--env {
+
+        @each $_clr,
+        $clrs in $cl--c-palette {
+
+            @each $__clr,
+            $hex in $clrs {
+                @if $__clr=="5" {
+                    --c-#{$_clr}: #{$hex};
+                }
+            }
+        }
+    }
 
     @each $_clr,
     $clrs in $cl--c-palette {
@@ -40,16 +55,6 @@
                 @include _cl-init_color($_clr, var(--c-#{$_clr}));
             }
         }
-
-        :root {
-
-            @each $__clr,
-            $hex in $clrs {
-                @if $__clr=="5" {
-                    --c-#{$_clr}: #{$hex};
-                }
-            }
-        }
     }
 }
 
@@ -58,15 +63,19 @@
 }
 
 @mixin _cl-init_color_full($name, $color) {
-    .#{$name} {
-        @include _($--colors--pseudo-defealt) {
-            @include _cl-background_color($color);
+    @if $--colors--active-bg {
+        .#{$name} {
+            @include _($--colors--pseudo-defealt) {
+                @include _cl-background_color($color);
+            }
         }
     }
 
-    .#{$name}-t {
-        @include _($--colors--pseudo-defealt) {
-            @include _cl-text_color($color);
+    @if $--colors--active-text {
+        .#{$name}-t {
+            @include _($--colors--pseudo-defealt) {
+                @include _cl-text_color($color);
+            }
         }
     }
 

@@ -183,7 +183,7 @@
     vertical-align: middle
 }
 
-@include __ {
+@include __($--box--screens-defealt) {
 
     // float
     .f-n {

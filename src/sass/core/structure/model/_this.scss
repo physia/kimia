@@ -1,39 +1,47 @@
 @import "variables";
 @import "mixins";
 
-@include __ {
+@include __($--model--screens-defealt) {
 
-    :root {
+    .--env {
         @if $current_screen=="s" {
-            --is-screen-s: 1;
+            --is-s: 1;
+            --hide-s: none;
         }
     
         @else {
-            --is-screen-s: 0;
+            --is-s: 0;
+            --hide-s: initial;
         }
     
         @if $current_screen=="m" {
-            --is-screen-m: 1;
+            --is-m: 1;
+            --hide-m: none;
         }
     
         @else {
-            --is-screen-m: 0;
+            --is-m: 0;
+            --hide-m: initial;
         }
     
         @if $current_screen=="l" {
             --is-screen-l: 1;
+            --hide-l: none;
         }
     
         @else {
-            --is-screen-l: 0;
+            --is-l: 0;
+            --hide-l: initial;
         }
     
         @if $current_screen=="xl" {
-            --is-screen-xl: 1;
+            --is-xl: 1;
+            --hide-xl: none;
         }
     
         @else {
-            --is-screen-xl: 0;
+            --is-xl: 0;
+            --hide-xl: initial;
         }
     }
 

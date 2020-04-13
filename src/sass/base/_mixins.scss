@@ -71,7 +71,7 @@ $current_screen: "screen_size" !global;
         }
 
         @if $onActive {
-            @at-root #{$start+"a\\:"+str-slice(quote(&), $frome)+$end+":active"} {
+            @at-root #{$start+"a\\:"+str-slice(quote(&), $from)+$end+":active"} {
                 @extend #{$selecterName}
             }
         }

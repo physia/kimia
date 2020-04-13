@@ -1,32 +1,34 @@
 // transition
-.\>,
-.h\:\>:hover,
-.a\:\>:active,
-.f\:\>:focus {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition-duration: 200ms;
-    animation-duration: 200ms;
+.--env {
+    --tr-timing: 200ms;
+    --tr-props: all;
+    --tr-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.\> {
+    @include _($--transition--pseudo-defealt) {
+        transition-property: var(--tr-props);
+        transition-timing-function: var(--tr-function);
+        transition-duration: var(--tr-timing);
+        animation-duration: var(--tr-timing);
+    }
 }
 
-.\>\>,
-.h\:\>\>:hover,
-.a\:\>\>:active,
-.f\:\>\>:focus {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition-duration: 250ms;
-    animation-duration: 250ms;
+.\>\> {
+    @include _($--transition--pseudo-defealt) {
+        transition-property: var(--tr-props);
+        transition-timing-function: var(--tr-function);
+        transition-duration: 250ms;
+        animation-duration: 250ms;
+    }
 }
 
-.\>\>\>,
-.h\:\>\>\>:hover,
-.a\:\>\>\>:active,
-.f\:\>\>\>:focus {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition-duration: 300ms;
-    animation-duration: 300ms
+.\>\>\> {
+    @include _($--transition--pseudo-defealt) {
+        transition-property: var(--tr-props);
+        transition-timing-function: var(--tr-function);
+        transition-duration: 300ms;
+        animation-duration: 300ms;
+    }
 }
 //
 .\>-n {
@@ -35,4 +37,19 @@
 
 .\>-i {
     transition: inherit;
+}
+// 
+.-\>>.\<- ,.\<- {
+    --element: 1;
+}
+.h\:-\>:hover>.h\:\<-,
+.h\:\<-:hover {
+    --element-hover: 1;
+}
+.a\:-\>:active>.a\:\<-,
+.a\:\<-:active {
+    --element-active: 1;
+}
+.f\:\<-:focus {
+    --element-focus: 1;
 }

@@ -1,25 +1,29 @@
 //  direction
 .--rtl {
+    --hide-rtl: none;
+    --hide-ltr: initial;
     --dir: rtl;
     --dir-start: right;
     --dir-end: left;
     --is-rtl: 1;
     --is-ltr: 0;
-    direction: var(--dir, rtl);
+    direction: var(--dir);
 }
 
 .--ltr {
+    --hide-ltr: none;
+    --hide-rtl: initial;
     --dir: ltr;
     --dir-start: left;
     --dir-end: right;
     --is-ltr: 1;
     --is-rtl: 0;
-    direction: var(--dir,ltr);
+    direction: var(--dir);
 }
 // theme
 .--dark {
-    // background-color: #000;
-    // color: rgb(245, 245, 245);
+    --hide-dark: none;
+    --hide-light: initial;
     --is-dark: 1;
     --is-light: 0;
     --theme-text-color:rgb(255, 255, 255);
@@ -35,8 +39,8 @@ body.--dark {
 }
 
 .--light {
-    // background-color: #fff;
-    // color: rgb(10, 10, 10);
+    --hide-light: none;
+    --hide-dark: initial;
     --is-dark: 0;
     --is-light: 1;
     --theme-text-color:rgb(10, 10, 10);
@@ -77,4 +81,13 @@ body.--light {
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+// hide--
+$hide-list: rtl ltr dark light s m l xl;
+
+@each $item in $hide-list {
+    .--#{$item}-n {
+        display: var(--hide-#{$item});
+    }
 }

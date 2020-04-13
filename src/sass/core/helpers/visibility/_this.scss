@@ -1,20 +1,35 @@
 // visibility
 .-v-v {
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: all !important;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
 }
 
 .-v-h {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .-v-i {
-    visibility: inherit !important;
+    visibility: inherit;
 }
 
 .-v-n {
-    display: none !important;
+    display: none;
+}
+//
+.-v-v\> .-v-v\<,
+.h\:-v-v\>:hover .h\:-v-v\<,
+.a\:-v-v\>:hover .a\:-v-v\< {
+    @extend .-v-v, .\>
+}
+
+.-v-h\> .-v-h\<,
+.h\:-v-h\>:hover .h\:-v-h\<,
+.a\:-v-h\>:hover .a\:-v-h\<,
+.-v-v\<,
+.h\:-v-v\<,
+.a\:-v-v\< {
+    @extend .-v-h, .\>
 }

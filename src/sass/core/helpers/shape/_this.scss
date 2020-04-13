@@ -1,37 +1,31 @@
 @import "mixins";
-//
-$--shape--border-status: "n h f" !global;
-//
-$--shape--border-width: 1px;
-$--shape--border-style: solid;
-$--shape--border: var(--b-style, $--shape--border-style) var(--b-width, $--shape--border-width);
 
 .-b-1 {
-    @include _($--shape--border-status) {
+    @include _($--shape--pseudo-defealt) {
         --b-width: 1px
     }
 }
 
 .-b-2 {
-    @include _($--shape--border-status) {
+    @include _($--shape--pseudo-defealt) {
         --b-width: 2px
     }
 }
 
 .-b-3 {
-    @include _($--shape--border-status) {
+    @include _($--shape--pseudo-defealt) {
         --b-width: 3px
     }
 }
 
 .-b-s {
-    @include _($--shape--border-status) {
+    @include _($--shape--pseudo-defealt) {
         --b-style: solid
     }
 }
 
 .-b-d {
-    @include _($--shape--border-status) {
+    @include _($--shape--pseudo-defealt) {
         --b-style: dotted
     }
 }

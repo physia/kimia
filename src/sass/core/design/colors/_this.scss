@@ -1,6 +1,7 @@
 @import "variables";
 @import "functions";
 @import "mixins";
+
 /*
  * Physia css color system
  * {c|d|l}-{*}-{*}: background color لون الخلفية
@@ -13,24 +14,29 @@
  * يمكن استعماله أيضا لتحديد تدرج معين
  * dark and light theme helpers
  * you can use " to select color black to white
- */ 
- .c-c,
- .c-s,
- .c-n,
- .c-17 {
-     color: #000;
- }
+ */
 @for $dc from 0 to 21 {
-    .c#{$dc} {
-        background-color: var(--theme-colors-#{$dc})
+    @if $--colors--active-bg {
+        .c#{$dc} {
+            @include _cl-background_color(var(--theme-colors-#{$dc}));
+        }
     }
 
-    .c#{$dc}-t {
-        color: var(--theme-colors-#{$dc})
+    @if $--colors--active-text {
+        .c#{$dc}-t {
+            @include _cl-text_color(var(--theme-colors-#{$dc}));
+        }
     }
+
     @if $--colors--active-border {
         .c#{$dc}-b {
-            border-color: var(--theme-colors-#{$dc})
+            @include _cl-border_color(var(--theme-colors-#{$dc}));
+        }
+    }
+
+    @if $--colors--active-fill {
+        .c#{$dc}-f {
+            @include _cl-fill_color(var(--theme-colors-#{$dc}));
         }
     }
 }
@@ -46,20 +52,38 @@
         --theme-colors-#{$dc}: #{invert($color)};
     }
 
-    .d#{$dc},
-    .l#{$dc}{
-        background-color: var(--theme-colors-#{$dc})
+    @if $--colors--active-bg {
+
+        .d#{$dc},
+        .l#{$dc} {
+            background-color: var(--theme-colors-#{$dc})
+        }
     }
-    .d#{$dc}-t,
-    .l#{$dc}-t{
-        color: var(--theme-colors-#{$dc})
+
+    @if $--colors--active-text {
+
+        .d#{$dc}-t,
+        .l#{$dc}-t {
+            color: var(--theme-colors-#{$dc})
+        }
     }
+
     @if $--colors--active-border {
+
         .d#{$dc}-b,
-        .l#{$dc}-b{
+        .l#{$dc}-b {
             border-color: var(--theme-colors-#{$dc})
         }
     }
+
+    @if $--colors--active-border {
+
+        .d#{$dc}-f,
+        .l#{$dc}-f {
+            fill: var(--theme-colors-#{$dc})
+        }
+    }
+
     // dynamic theme colores
     @include _cl-init_color_full(c-#{$dc}, var(--theme-colors-#{$dc}));
 
@@ -77,7 +101,8 @@ $color in $cl--colors {
 
 // ألوان تحديد الأوضاع، خطأ، تحذير، تنبيه...إلخ
 // static colors: wrong, error,...
-:root {
+.--env {
+
     @each $name,
     $color in $cl--static-colors {
         --c-#{$name}: $color;

@@ -2,8 +2,7 @@
 .bdg-f {
     color: #fff;
     height: 24px;
-    background-color: rgb(149, 117, 205);
-    background-color: var(--c-s, rgb(149, 117, 205));
+    background-color: var(--c-s);
     pointer-events: none;
     padding: 0 2px;
     white-space: nowrap;

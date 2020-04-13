@@ -1,15 +1,21 @@
 /* <CORE> */
-/* ../DESIGN */
+$--pseudo-defealt: "n h f";
+$--screens-defealt: "s l";
+
+/* ../DESIGN ------------------------------------ */
 
 /* -->COLORS<-- */
-$--colors--pseudo-defealt: "n h f";
+$--colors--pseudo-defealt: $--pseudo-defealt;
 $--colors--primaryColor: "tl";
 $--colors--secondaryColor: "pnk";
 // config
+$--colors--active-bg: true;
+$--colors--active-text: true;
 $--colors--active-border: false;
+$--colors--active-fill: false;
 
 /* -->ELEVATION<-- */
-$--elevation--pseudo-defealt: "n h f";
+$--elevation--pseudo-defealt: $--pseudo-defealt;
 $--elevation--defaultElevation: 2;
 $--elevation--range: 12;
 // config
@@ -17,3 +23,32 @@ $--elevation--active-umbra: false;
 $--elevation--active-penumbra: false;
 $--elevation--active-ambient: true;
 $--elevation--active-end: false;
+
+/* -->STATUS<-- */
+$--status--pseudo-defealt: $--pseudo-defealt;
+
+/* -->TYPEGRAPHY<-- */
+$--typography--font-edit-size: 0;
+
+/* -->ICONOGRAPHY<-- */
+$--iconography-load-font-icons: true;
+$--iconography-active-style: true;
+$--iconography-active-rtl: true;
+$--iconography-style : "outlined"; // normal, outlined, two tone, round, sharp
+
+/* ../HELPERS ---------------------------------- */
+/* -->SHAPE<-- */
+$--shape--pseudo-defealt: "n h f";
+$--shape--border-width: 1px;
+$--shape--border-style: solid;
+$--shape--border: var(--b-style, $--shape--border-style) var(--b-width, $--shape--border-width);
+
+/* ../STRUCTURE -------------------------------- */
+/* -->BOX<-- */
+$--box--screens-defealt: $--screens-defealt;
+/* -->MODEL<-- */
+$--model--screens-defealt: $--screens-defealt;
+
+/* ../MOTION ----------------------------------- */
+/* -->TRANSITION<-- */
+$--transition--pseudo-defealt: "n h f a";
