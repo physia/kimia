@@ -3,7 +3,7 @@
 }
 
 .-bla::before {
-    @extend .anm,.abs, .\.f, .-grdnt-x;
+    @extend .anm,.abs, .\.f, .-g-x;
     content: " ";
     animation-name: anm-sld;
     --anm--sld-opacity-from: 1;

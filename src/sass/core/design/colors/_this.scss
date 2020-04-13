@@ -41,17 +41,24 @@
     }
 }
 
-@for $dc from 0 to 21 {
-    $color: hsl(0, 0, $dc*5);
-
-    .--light {
+.--light {
+    @for $dc from 0 to 21 {
+        $color: hsl(0, 0, $dc*5);
         --theme-colors-#{$dc}: #{$color};
     }
+}
 
-    .--dark {
+.--dark {
+    @for $dc from 0 to 21 {
+        $color: hsl(0, 0, $dc*5);
         --theme-colors-#{$dc}: #{invert($color)};
     }
+}
 
+
+@for $dc from 0 to 21 {
+    $color: hsl(0, 0, $dc*5);
+    
     @if $--colors--active-bg {
 
         .d#{$dc},
@@ -91,22 +98,25 @@
 
 @include _cl-color_palette("p", $--colors--primaryColor, "5");
 @include _cl-color_palette("s", $--colors--secondaryColor, "3");
-
 @include _cl-colors();
 
-@each $name,
-$color in $cl--colors {
-    @include _cl-init_color_full(c-#{$name}, $color);
-}
-
-// ألوان تحديد الأوضاع، خطأ، تحذير، تنبيه...إلخ
-// static colors: wrong, error,...
 .--env {
+    @each $name,
+    $color in $cl--colors {
+        --c-#{$name}: #{$color};
+    }
 
+    // ألوان تحديد الأوضاع، خطأ، تحذير، تنبيه...إلخ
+    // static colors: wrong, error,...
     @each $name,
     $color in $cl--static-colors {
         --c-#{$name}: $color;
     }
+
+}
+@each $name,
+$color in $cl--colors {
+    @include _cl-init_color(#{$name}, --c-#{$name});
 }
 
 @each $name,
@@ -123,5 +133,5 @@ $color in $cl--static-colors {
 ::-moz-selection {
     color: white;
     background-color: var(--c-s);
-    caret-color: currentColor;
+    caret-color: var(--c-c);
 }
