@@ -1,5 +1,6 @@
 $screens-sizes: ("s": 479px, "m": 480px, "l": 840px, "xl": 1201px);
-$current_screen: "screen_size" !global;
+// ii-ss $current_screen: "screen_size" !global;
+$current_screen: "screen_size" !default;
 @mixin __($screens: "s l") {
     @each $screen in str-split($screens, " ") {
         $current_screen: $screen !global;
@@ -45,7 +46,7 @@ $current_screen: "screen_size" !global;
 
         @if $prop !="s"and $prop !="n" {
             @if $prop=="m"or $prop=="l"or $prop=="xl" {
-                @at-root #{$start+$prop+"\\:"+str-slice(quote(&), $from)+$end} {
+                @at-root #{$start+$prop+"\\:"+str-slice(#{&}, $from)+$end} {
                     @content
                 }
             }
@@ -59,19 +60,19 @@ $current_screen: "screen_size" !global;
         }
 
         @if $onHover {
-            @at-root #{$start+"h\\:"+str-slice(quote(&), $from)+$end+":hover"} {
+            @at-root #{$start+"h\\:"+str-slice($selecterName, $from)+$end+":hover"} {
                 @extend #{$selecterName}
             }
         }
 
         @if $onFocus {
-            @at-root #{$start+"f\\:"+str-slice(quote(&), $from)+$end+":focus"} {
+            @at-root #{$start+"f\\:"+str-slice($selecterName, $from)+$end+":focus"} {
                 @extend #{$selecterName}
             }
         }
 
         @if $onActive {
-            @at-root #{$start+"a\\:"+str-slice(quote(&), $from)+$end+":active"} {
+            @at-root #{$start+"a\\:"+str-slice($selecterName, $from)+$end+":active"} {
                 @extend #{$selecterName}
             }
         }

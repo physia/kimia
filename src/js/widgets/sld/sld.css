@@ -1,0 +1,86 @@
+.sld,
+.sld-area {
+    position: relative;
+}
+
+.sld,
+.sld-area {
+    overflow: hidden;
+}
+
+.sld--indctrs {
+    position: absolute;
+    z-index: 1;
+    width: calc(var(--sld-scroll-width) * 1px);
+    height: calc(var(--sld-scroll-height) * 1px);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sld--indctr {
+    position: absolute;
+    border-radius: 100%;
+    background-color: var(--clr-s, rgb(149, 117, 205));
+    transition: all 0.25s ease-out;
+}
+
+
+[sld="start"],
+[sld="end"] {
+    --sld-right: 0 !important;
+    --sld-left: 0 !important;
+    --sld-bottom: 0 !important;
+    --sld-top: 0 !important;
+}
+
+[sld="end"].sld-padding {
+    transition: padding 0.5s ease-out;
+}
+
+.sld-padding {
+    padding-right: calc(var(--sld-right)/2 * 1px);
+    padding-left: calc(var(--sld-left)/2 * 1px);
+    padding-top: calc(var(--sld-top)/2 * 1px);
+    padding-bottom: calc(var(--sld-bottom)/2 * 1px);
+}
+
+.sld--indctr-top {
+    width: calc(var(--sld-scroll-width) * 1.4px);
+    height: calc(var(--sld-scroll-width) * 2px);
+    opacity: calc(var(--sld-top, 0) / 150);
+    transform: translate(50%, -50%) scaleY(calc(0.001 + calc(var(--sld-top, 0) * calc(14 * var(--sld-height, 0) / 100) / 100) / var(--sld-scroll-width, 0)));
+    top: 0;
+    right: 50%;
+}
+
+.sld--indctr-bottom {
+    width: calc(var(--sld-scroll-width) * 1.4px);
+    height: calc(var(--sld-scroll-width) * 2px);
+    opacity: calc(var(--sld-bottom, 0) / 150);
+    bottom: 0;
+    transform: translate(50%, 50%) scaleY(calc(0.001 + calc(var(--sld-bottom, 0) * calc(14 * var(--sld-height, 0) / 100) / 100) / var(--sld-scroll-width, 0)));
+    right: 50%;
+}
+
+.sld--indctr-left {
+    width: calc(var(--sld-scroll-height) * 2px);
+    height: calc(var(--sld-scroll-height) * 1.4px);
+    opacity: calc(var(--sld-left, 0) / 150);
+    bottom: 0;
+    transform: translate(-50%, -50%) scaleX(calc(0.001 + calc(var(--sld-left, 0) * calc(14 * var(--sld-height, 0) / 100) / 100) / var(--sld-scroll-height, 0)));
+    top: 50%;
+    left: 0;
+}
+
+.sld--indctr-right {
+    width: calc(var(--sld-scroll-height) * 2px);
+    height: calc(var(--sld-scroll-height) * 1.4px);
+    opacity: calc(var(--sld-right, 0) / 150);
+    transform: translate(50%, -50%) scaleX(calc(0.001 + calc(var(--sld-right, 0) * calc(14 * var(--sld-height, 0) / 100) / 100) / var(--sld-scroll-height, 0)));
+    top: 50%;
+    right: 0;
+}

@@ -11,7 +11,7 @@ $--colors--secondaryColor: "pnk";
 // config
 $--colors--active-bg: true;
 $--colors--active-text: true;
-$--colors--active-border: false;
+$--colors--active-border: true;
 $--colors--active-fill: false;
 
 /* -->ELEVATION<-- */
@@ -19,8 +19,8 @@ $--elevation--pseudo-defealt: $--pseudo-defealt;
 $--elevation--defaultElevation: 2;
 $--elevation--range: 12;
 // config
-$--elevation--active-umbra: false;
-$--elevation--active-penumbra: false;
+$--elevation--active-umbra: true;
+$--elevation--active-penumbra: true;
 $--elevation--active-ambient: true;
 $--elevation--active-end: false;
 
@@ -28,7 +28,7 @@ $--elevation--active-end: false;
 $--status--pseudo-defealt: $--pseudo-defealt;
 
 /* -->TYPEGRAPHY<-- */
-$--typography--font-edit-size: 0;
+$--typography--font-edit-size: 0px;
 
 /* -->ICONOGRAPHY<-- */
 $--iconography-load-font-icons: true;
@@ -48,6 +48,8 @@ $--shape--border: var(--b-style, $--shape--border-style) var(--b-width, $--shape
 $--box--screens-defealt: $--screens-defealt;
 /* -->MODEL<-- */
 $--model--screens-defealt: $--screens-defealt;
+/* -->RATIO<-- */
+$--ratio--screens-defealt: "s m";
 
 /* ../MOTION ----------------------------------- */
 /* -->TRANSITION<-- */

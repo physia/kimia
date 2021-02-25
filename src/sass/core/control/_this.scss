@@ -20,16 +20,17 @@
     --is-rtl: 0;
     direction: var(--dir);
 }
+
 // theme
 .--dark {
     --hide-dark: none;
     --hide-light: initial;
     --is-dark: 1;
     --is-light: 0;
-    --theme-text-color:rgb(255, 255, 255);
-    --theme-card-bg:rgb(30, 30, 30);
-    --theme-status-h-opacity:.7;
-    --theme-status-m-opacity:.5;
+    --theme-text-color: rgb(255, 255, 255);
+    --theme-card-bg: rgb(30, 30, 30);
+    --theme-status-h-opacity: .7;
+    --theme-status-m-opacity: .5;
 }
 
 html.--dark,
@@ -43,10 +44,10 @@ body.--dark {
     --hide-dark: initial;
     --is-dark: 0;
     --is-light: 1;
-    --theme-text-color:rgb(10, 10, 10);
-    --theme-card-bg:rgb(255, 255, 255);
-    --theme-status-h-opacity:.87;
-    --theme-status-m-opacity:.6;
+    --theme-text-color: rgb(10, 10, 10);
+    --theme-card-bg: rgb(255, 255, 255);
+    --theme-status-h-opacity: .87;
+    --theme-status-m-opacity: .6;
 }
 
 html.--light,
@@ -71,8 +72,16 @@ body.--light {
 
 * {
     -webkit-tap-highlight-color: transparent;
+    min-width: 0;scrollbar-width: thin;
 }
-
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: rgba(132,132,132,0.4);
+}
 *:focus {
     outline: none;
 }
@@ -81,6 +90,11 @@ body.--light {
 *::before,
 *::after {
     box-sizing: border-box;
+}
+//
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 // hide--

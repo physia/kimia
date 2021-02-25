@@ -2,21 +2,21 @@
     $shadows: "" !default;
 
     @if $--elevation--active-umbra {
-        $shadows:#{$shadows},#{map-get($el--umbra,$value)} $el--umbra-color
+        $shadows:#{$shadows+","+map-get($el--umbra,$value)+" "+$el--umbra-color}
     }
 
     @if $--elevation--active-penumbra {
-        $shadows:#{$shadows},#{map-get($el--penumbra,$value)} $el--penumbra-color
+        $shadows:#{$shadows+","+map-get($el--penumbra,$value)+" "+$el--penumbra-color}
     }
 
     @if $--elevation--active-ambient {
-        $shadows:#{$shadows},#{map-get($el--ambient,$value)} $el--ambient-color
+        $shadows:#{$shadows+","+map-get($el--ambient,$value)+" "+$el--ambient-color}
     }
 
     @if $isImportant {
-        box-shadow: unquote(str-slice(quote($shadows), 2)) !important
+        box-shadow: unquote(str-slice($shadows, 2)) !important
     }
     @else {
-        box-shadow: unquote(str-slice(quote($shadows), 2))
+        box-shadow: unquote(str-slice($shadows, 2))
     }
 }

@@ -120,16 +120,14 @@
         }
     }
 
-    .\.c-x,
-    .\.c {
+    .\.c-x {
         @include _ {
             right: 50%;
             transform: translateX(50%);
         }
     }
 
-    .\.c-y,
-    .\.c {
+    .\.c-y{
         @include _ {
             top: 50%;
             transform: translateY(-50%);
@@ -138,7 +136,10 @@
 
     .\.c {
         @include _ {
-            transform: translate(50%, -50%)
+            transform: translate(50%, -50%);
+            // transform: translate(var(--dot-c-x,50%), var(--dot-c-y,50%))
+            top: 50%;
+            right: 50%;
         }
     }
 
@@ -398,6 +399,19 @@
         }
     }
 
+    .w-mnh,
+    .u-mnh {
+        @include _ {
+            min-width: 100vh;
+        }
+    }
+    .w-mnw,
+    .u-mnw {
+        @include _ {
+            min-width: 100vw;
+        }
+    }
+
     .h-mx,
     .u-mx {
         @include _ {
@@ -409,6 +423,18 @@
     .u-mn {
         @include _ {
             min-height: 100%;
+        }
+    }
+    .h-mnh,
+    .u-mnh {
+        @include _ {
+            min-height: 100vh;
+        }
+    }
+    .h-mnw,
+    .u-mnw {
+        @include _ {
+            min-height: 100vw;
         }
     }
 }

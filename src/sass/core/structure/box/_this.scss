@@ -244,17 +244,30 @@
     // box
     .b-rw,
     .b-x {
+        @extend .b;
         @include _ {
-            @extend .b;
             flex-direction: row;
         }
     }
-
+    .b-rw-r,
+    .b-x-r {
+        @extend .b;
+        @include _ {
+            flex-direction: row-reverse;
+        }
+    }
     .b-cl,
     .b-y {
+        @extend .b;
         @include _ {
-            @extend .b;
             flex-direction: column;
+        }
+    }
+    .b-cl-r,
+    .b-y-r {
+        @extend .b;
+        @include _ {
+            flex-direction: column-reverse;
         }
     }
 }

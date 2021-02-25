@@ -58,35 +58,35 @@
 
 @for $dc from 0 to 21 {
     $color: hsl(0, 0, $dc*5);
-    
+
     @if $--colors--active-bg {
 
-        .d#{$dc},
-        .l#{$dc} {
+        .--dark .d#{$dc},
+        .--light .l#{$dc} {
             background-color: var(--theme-colors-#{$dc})
         }
     }
 
     @if $--colors--active-text {
 
-        .d#{$dc}-t,
-        .l#{$dc}-t {
+        .--dark .d#{$dc}-t,
+        .--light .l#{$dc}-t {
             color: var(--theme-colors-#{$dc})
         }
     }
 
     @if $--colors--active-border {
 
-        .d#{$dc}-b,
-        .l#{$dc}-b {
+        .--dark .d#{$dc}-b,
+        .--light .l#{$dc}-b {
             border-color: var(--theme-colors-#{$dc})
         }
     }
 
     @if $--colors--active-border {
 
-        .d#{$dc}-f,
-        .l#{$dc}-f {
+        .--dark .d#{$dc}-f,
+        .--light .l#{$dc}-f {
             fill: var(--theme-colors-#{$dc})
         }
     }
@@ -101,6 +101,7 @@
 @include _cl-colors();
 
 .--env {
+
     @each $name,
     $color in $cl--colors {
         --c-#{$name}: #{$color};
@@ -114,9 +115,10 @@
     }
 
 }
+
 @each $name,
 $color in $cl--colors {
-    @include _cl-init_color(#{$name}, --c-#{$name});
+    @include _cl-init_color(#{$name}, var(--c-#{$name}));
 }
 
 @each $name,

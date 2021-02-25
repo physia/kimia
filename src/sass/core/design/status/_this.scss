@@ -24,10 +24,21 @@
 
 
 @for $var from 0 to 10 {
+    @if $var==0 {
 
-    .o-#{$var} {
-        @include _($--status--pseudo-defealt) {
-            opacity: $var/10;
+        .o-n,
+        .o-0 {
+            @include _($--status--pseudo-defealt) {
+                opacity: $var/10;
+            }
+        }
+    }
+
+    @else {
+        .o-#{$var} {
+            @include _($--status--pseudo-defealt) {
+                opacity: $var/10;
+            }
         }
     }
 }

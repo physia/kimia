@@ -19,7 +19,7 @@
     --xxl-column-width: 72px;
 }
 .g {
-    @extend .b-fw;
+    @extend .b-fw;//,.u-f;
     //grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 

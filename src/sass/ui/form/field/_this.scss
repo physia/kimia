@@ -5,23 +5,24 @@
     transition: color 1s ease
 }
 
-.fld {
+.fld-n {
     @extend .\>;
-    height: 36px !important;
+    border: none;
+    background-color: transparent;
+    height: 36px;
+}
+.fld {
+    @extend .fld-n;
 
-    &:not(.fld-n) {
+    & {
         background-image: linear-gradient(var(--c-s), var(--c-s)), linear-gradient(to right, rgba(135, 135, 135, 0.3), rgba(111, 111, 111, 0.35), rgba(135, 135, 135, 0.3));
         background-size: 0 2px, 100% 1px;
         background-repeat: no-repeat;
         background-position: center bottom;
     }
-
-    border: none;
-    background-color: transparent;
-}
-
-.fld:not(.fld-n):focus {
-    background-size: 100% 2px, 100% 1px;
+    &:focus {
+        background-size: 100% 2px, 100% 1px;
+    }
 }
 
 input,
@@ -33,7 +34,7 @@ select {
 
 .--dark select option {
     background-color: black;
-    color: black;
+    color: white;
 }
 
 /*

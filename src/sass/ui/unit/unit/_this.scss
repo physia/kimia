@@ -2,22 +2,20 @@
 .unt-n {
     @extend .-s-n, .rlt, .\>\>, .-d-if,.b-a-c;
 }
-
-.unt:not(.s-s) {
-    @extend .-c-p;
+.unt {
+    &:not(.s-s) {
+        @extend .-c-p;
+    }
+    &:not(.s-d)::before {
+        content: " ";
+        @extend .c-c, .-r-i,.-pe-n,.abs ,.\.f, .\>-i, .-z, .o-0;
+    }
 }
-
 .unt.u-r i,
 .unt.u-r,
 .unt-n.u-r i,
 .unt-n.u-r {
     @extend .t-u;
-}
-
-.unt:not(.s-d)::before {
-    content: " ";
-    @extend .c-c, .-r-i,.-pe-n,.abs ,.\.f, .\>-i, .-z, .o-0;
-    will-change: background-color, border, opacity;
 }
 
 .unt:not(.s-s):hover::before {
@@ -38,4 +36,9 @@
 .unt-s i {
     @extend .unt;
     font-size: 16px
+}
+
+a.unt {
+    text-decoration: none;
+    color: inherit;
 }

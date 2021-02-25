@@ -2,31 +2,31 @@
 
 .-b-1 {
     @include _($--shape--pseudo-defealt) {
-        --b-width: 1px
+        --b-width: 1px;
     }
 }
 
 .-b-2 {
     @include _($--shape--pseudo-defealt) {
-        --b-width: 2px
+        --b-width: 2px;
     }
 }
 
 .-b-3 {
     @include _($--shape--pseudo-defealt) {
-        --b-width: 3px
+        --b-width: 3px;
     }
 }
 
 .-b-s {
     @include _($--shape--pseudo-defealt) {
-        --b-style: solid
+        --b-style: solid;
     }
 }
 
 .-b-d {
     @include _($--shape--pseudo-defealt) {
-        --b-style: dotted
+        --b-style: dotted;
     }
 }
 
