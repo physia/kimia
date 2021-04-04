@@ -13,7 +13,6 @@
                 --c-p: #{$hex};
             }
 
-            --c-p-#{$__clr}: #{$hex};
         }
     }
 
@@ -27,7 +26,7 @@
             @include _cl-init_color("p", var(--c-p));
         }
 
-        @include _cl-init_color($__clr, var(--c-p-#{$__clr}), "c-"+$clr)
+        // @include _cl-init_color($__clr, var(--c-p-#{$__clr}), "c-"+$clr)
     }
 }
 

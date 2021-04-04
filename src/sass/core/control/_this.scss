@@ -33,10 +33,10 @@
     --theme-status-m-opacity: .5;
 }
 
-html.--dark,
-body.--dark {
-    background-color: black;
-    color: #EEE;
+.--dark,
+.--dark {
+    background-color: var(--theme-colors-15,#222);
+    color: var(--theme-colors-1,#222);
 }
 
 .--light {
