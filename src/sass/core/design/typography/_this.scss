@@ -1,168 +1,95 @@
+@import "variables";
 .--env {
-    --theme-font-edit-size: #{$--typography--font-edit-size};
+    --theme-font-size-rate: #{$--typography--font-size-rate};
+    --theme-font-size-b: #{$--typography--font-size-b};
 }
 
-h1 {
-    font-size: calc(var(--theme-font-edit-size) + 5.5rem);
-    font-weight: 300;
-    letter-spacing: -1px;
-}
-
-h2 {
-    font-size: calc(var(--theme-font-edit-size) + 3rem);
-    font-weight: 300;
+  .t-h1 {
+    font-size: calc(var(--theme-font-size-rate) * 96px + var(--theme-font-size-b));
+    font-weight: lighter;
+    letter-spacing: -1.5px;
+  }
+  .t-h2 {
+    font-size: calc(var(--theme-font-size-rate) * 60px + var(--theme-font-size-b));
+    font-weight: lighter;
     letter-spacing: -0.5px;
-}
-
-h3 {
-    font-size: calc(var(--theme-font-edit-size) + 2rem);
-    font-weight: 400;
+  }
+  .t-h3 {
+    font-size: calc(var(--theme-font-size-rate) * 48px + var(--theme-font-size-b));
+    font-weight: normal;
     letter-spacing: 0px;
-}
-
-h4 {
-    font-size: calc(var(--theme-font-edit-size) + 1.8rem);
-    font-weight: 400;
+  }
+  .t-h4 {
+    font-size: calc(var(--theme-font-size-rate) * 34px + var(--theme-font-size-b));
+    font-weight: normal;
     letter-spacing: 0.25px;
-}
-
-h5 {
-    font-size: calc(var(--theme-font-edit-size) + 1.5rem);
-    font-weight: 400;
+  }
+  .t-h5 {
+    font-size: calc(var(--theme-font-size-rate) * 24px + var(--theme-font-size-b));
+    font-weight: normal;
     letter-spacing: 0px;
-    line-height: 30px;
-}
-
-h6 {
-    font-size: calc(var(--theme-font-edit-size) + 0.8rem);
-    font-weight: 300;
+  }
+  .t-h6 {
+    font-size: calc(var(--theme-font-size-rate) * 20px + var(--theme-font-size-b));
+    font-weight: 500;
     letter-spacing: 0.15px;
-    line-height: 25px;
-}
+  }
+  .t-st1 {
+    font-size: calc(var(--theme-font-size-rate) * 16px + var(--theme-font-size-b));
+    font-weight: normal;
+    letter-spacing: 0.15px;
+  }
+  .t-st2 {
+    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b));
+    font-weight: 500;
+    letter-spacing: 0.1px;
+  }
+  .t-b1 {
+    font-size: calc(var(--theme-font-size-rate) * 16px + var(--theme-font-size-b));
+    font-weight: normal;
+    letter-spacing: 0.5px;
+  }
+  .t-b2 {
+    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b));
+    font-weight: lighter;
+    letter-spacing: 0.25px;
+  }
+  .t-btn {
+    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b));
+    font-weight: 500;
+    letter-spacing: 1.25px;
+  }
+  .t-c {
+    font-size: calc(var(--theme-font-size-rate) * 12px + var(--theme-font-size-b));
+    font-weight: normal;
+    letter-spacing: 0.4px;
+  }
+  .t-o {
+    font-size: calc(var(--theme-font-size-rate) * 10px + var(--theme-font-size-b));
+    font-weight: normal;
+    letter-spacing: 1.5px;
+  }
 
 // 
 // text 1
-.t-6 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 2.25rem);
-    font-weight: 400;
-    letter-spacing: 0.15px;
-    line-height: 40px;
-}
 
-// text 2
-.t-7 {
-    font-size: calc(var(--theme-font-edit-size) + 0.2vw + 1.1rem);
-    line-height: 15px;
-}
-
-// text 3
-.t-8 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.81rem);
-    line-height: 20px;
-}
-
-// text 4
-.t-9 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.675rem);
-    font-weight: 500;
-    letter-spacing: -0.1px;
-    line-height: 24px;
-}
-
-// text 10
-.t-10 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.5rem);
-    line-height: 24px;
-}
-
-// Caption
-.t-c {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.6rem);
-    font-weight: 400;
-    letter-spacing: 0.4px;
-}
-
-// Overline
-.t-o {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.5rem);
-    font-weight: 400;
-    letter-spacing: 1.5px;
-}
-
-// Body 1
-.t-b,
-.t-b1 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.8rem);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    line-height: 1.55;
-}
-
-// Body 2
-.t-b2 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.8rem);
-    font-weight: 400;
-    letter-spacing: 0.25px;
-    line-height: 1.4;
-}
-
-// Action Button nano
-.t-a1 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.65rem);
-    font-weight: 300;
-    letter-spacing: 0px;
-}
-
-// Action Button small 
-.t-a2 {
-    font-size: calc(var(--theme-font-edit-size) + 0.1vw + 0.8rem);
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-// Action Button medium
-.t-a,
-.t-a3 {
-    font-size: calc(var(--theme-font-edit-size) + 0.2vw + 0.8rem);
-    font-weight: 500;
-    letter-spacing: 0.75px;
-}
-
-// Action Button medium
-.t-u {
-    font-size: calc(.2vw + 18px);
-}
-
-// Action Button large
-.t-a4 {
-    font-size: calc(var(--theme-font-edit-size) + 0.2vw + 0.9rem);
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-// Action Button xlarge
-.t-a5 {
-    font-size: calc(var(--theme-font-edit-size) + 0.2vw + 1.1rem);
-    font-weight: 500;
-    letter-spacing: 0.5px;
-}
 
 // font weight
 @for $value from 1 through 9 {
-    .t-w#{$value} {
+    .t-w-#{$value} {
         font-weight: #{$value*100};
     }
 }
 
-.t-l {
+.t-w-l {
     font-weight: lighter;
 }
 
-.t-n {
+.t-w-n {
     font-weight: normal;
 }
 
-.t-m {
+.t-w-b {
     font-weight: bold;
 }
 

@@ -43,21 +43,21 @@
 
 .--light {
     @for $dc from 0 to 21 {
-        $color: hsl(0, 0, $dc*5);
+        $color: hsl(0, 0%, $dc*5%);
         --theme-colors-#{$dc}: #{$color};
     }
 }
 
 .--dark {
     @for $dc from 0 to 21 {
-        $color: hsl(0, 0, $dc*5);
+        $color: hsl(0, 0%, $dc*5%);
         --theme-colors-#{$dc}: #{invert($color)};
     }
 }
 
 
 @for $dc from 0 to 21 {
-    $color: hsl(0, 0, $dc*5);
+    $color: hsl(0, 0%, $dc*5%);
 
     @if $--colors--active-bg {
 
@@ -106,14 +106,12 @@
     $color in $cl--colors {
         --c-#{$name}: #{$color};
     }
-
     // ألوان تحديد الأوضاع، خطأ، تحذير، تنبيه...إلخ
     // static colors: wrong, error,...
     @each $name,
     $color in $cl--static-colors {
-        --c-#{$name}: $color;
+        --c-#{$name}: #{$color};
     }
-
 }
 
 @each $name,
