@@ -1,7 +1,7 @@
 $screens-sizes: ("s": 479px, "m": 480px, "l": 840px, "xl": 1201px);
 // ii-ss $current_screen: "screen_size" !global;
 $current_screen: "screen_size" !default;
-@mixin __($screens: "s l") {
+@mixin __($screens: "s m l") {
     @each $screen in str-split($screens, " ") {
         $current_screen: $screen !global;
         @if $screen=="s" {

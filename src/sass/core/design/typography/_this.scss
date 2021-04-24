@@ -5,67 +5,67 @@
 }
 
   .t-h1 {
-    font-size: calc(var(--theme-font-size-rate) * 96px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 96px + var(--theme-font-size-b) * 1px);
     font-weight: lighter;
     letter-spacing: -1.5px;
   }
   .t-h2 {
-    font-size: calc(var(--theme-font-size-rate) * 60px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 60px + var(--theme-font-size-b) * 1px);
     font-weight: lighter;
     letter-spacing: -0.5px;
   }
   .t-h3 {
-    font-size: calc(var(--theme-font-size-rate) * 48px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 48px + var(--theme-font-size-b) * 1px);
     font-weight: normal;
     letter-spacing: 0px;
   }
   .t-h4 {
-    font-size: calc(var(--theme-font-size-rate) * 34px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 34px + var(--theme-font-size-b) * 1px);
     font-weight: normal;
     letter-spacing: 0.25px;
   }
   .t-h5 {
-    font-size: calc(var(--theme-font-size-rate) * 24px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 24px + var(--theme-font-size-b) * 1px);
     font-weight: normal;
     letter-spacing: 0px;
   }
   .t-h6 {
-    font-size: calc(var(--theme-font-size-rate) * 20px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 20px + var(--theme-font-size-b) * 1px);
     font-weight: 500;
     letter-spacing: 0.15px;
   }
   .t-st1 {
-    font-size: calc(var(--theme-font-size-rate) * 16px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 16px + var(--theme-font-size-b) * 1px);
     font-weight: normal;
     letter-spacing: 0.15px;
   }
   .t-st2 {
-    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b) * 1px);
     font-weight: 500;
     letter-spacing: 0.1px;
   }
   .t-b1 {
-    font-size: calc(var(--theme-font-size-rate) * 16px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 16px + var(--theme-font-size-b) * 1px);
     font-weight: normal;
     letter-spacing: 0.5px;
   }
   .t-b2 {
-    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b) * 1px);
     font-weight: lighter;
     letter-spacing: 0.25px;
   }
   .t-btn {
-    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 14px + var(--theme-font-size-b) * 1px);
     font-weight: 500;
     letter-spacing: 1.25px;
   }
   .t-c {
-    font-size: calc(var(--theme-font-size-rate) * 12px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 12px + var(--theme-font-size-b) * 1px);
     font-weight: normal;
     letter-spacing: 0.4px;
   }
   .t-o {
-    font-size: calc(var(--theme-font-size-rate) * 10px + var(--theme-font-size-b));
+    font-size: calc(var(--theme-font-size-rate) * 10px + var(--theme-font-size-b) * 1px);
     font-weight: normal;
     letter-spacing: 1.5px;
   }

@@ -1,6 +1,6 @@
 {
     "name": "kimia",
-    "version": "0.2.1-alpha",
+    "version": "0.2.2-alpha",
     "description": "Frontend framework",
     "style": "src/sass/import",
     "scripts": {},

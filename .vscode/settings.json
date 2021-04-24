@@ -2,5 +2,7 @@
     "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
     "cSpell.words": [
         "scrollbar"
-    ]
+    ],
+    "ponicode.testSettings.testLocation.locationType": "Same folder as source file",
+    "ponicode.testSettings.testLocation.path": "{rootDir}/{filePath}/{fileName}.test.{ext}"
 }
